@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HairAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4b465ac64a5b23441a43cb25eaeead10, type: 3}
+    - {fileID: 2800000, guid: 00ed6f20cb410f04389a598037c2a8dc, type: 3}
+    - {fileID: 2800000, guid: ce32f0515a830184cb3e99696523b1fd, type: 3}
+    - {fileID: 2800000, guid: 600fe7dcc8f8aed41843f3465a7c4536, type: 3}
+    - {fileID: 2800000, guid: 062b048d7b84e8942908965b0a0b49a5, type: 3}
+    - {fileID: 2800000, guid: 96b59f4af7e37eb4ea91a046727118f1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 00ed6f20cb410f04389a598037c2a8dc, type: 3}
+  - {fileID: 21300000, guid: ce32f0515a830184cb3e99696523b1fd, type: 3}
+  - {fileID: 21300000, guid: 4b465ac64a5b23441a43cb25eaeead10, type: 3}
+  - {fileID: 21300000, guid: 96b59f4af7e37eb4ea91a046727118f1, type: 3}
+  - {fileID: 21300000, guid: 600fe7dcc8f8aed41843f3465a7c4536, type: 3}
+  - {fileID: 21300000, guid: 062b048d7b84e8942908965b0a0b49a5, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Hair 2
+  - Hair 3
+  - Hair 1
+  - Hair 6
+  - Hair 4
+  - Hair 5
+  m_RenderDataMap: {}
+  m_Tag: HairAtlas
+  m_IsVariant: 0

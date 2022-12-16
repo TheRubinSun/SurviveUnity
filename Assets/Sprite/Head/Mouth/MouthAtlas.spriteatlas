@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MouthAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 429457c3d18015d4483ee5d909162f68, type: 3}
+    - {fileID: 2800000, guid: cc3d88138afa76844af8c2adb264f4f3, type: 3}
+    - {fileID: 2800000, guid: 11296d14523713e49bb1e902f613aaa1, type: 3}
+    - {fileID: 2800000, guid: 9dc68bfdf2273ab4abe876226f3e3942, type: 3}
+    - {fileID: 2800000, guid: 5b33f2c52bd8a7a459f278bb894da717, type: 3}
+    - {fileID: 2800000, guid: db08d74e9a0679745a197390b5c4bfad, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: cc3d88138afa76844af8c2adb264f4f3, type: 3}
+  - {fileID: 21300000, guid: 429457c3d18015d4483ee5d909162f68, type: 3}
+  - {fileID: 21300000, guid: 11296d14523713e49bb1e902f613aaa1, type: 3}
+  - {fileID: 21300000, guid: 5b33f2c52bd8a7a459f278bb894da717, type: 3}
+  - {fileID: 21300000, guid: 9dc68bfdf2273ab4abe876226f3e3942, type: 3}
+  - {fileID: 21300000, guid: db08d74e9a0679745a197390b5c4bfad, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Mouth 2
+  - Mouth 1
+  - Mouth 3
+  - Mouth 5
+  - Mouth 4
+  - Mouth 6
+  m_RenderDataMap: {}
+  m_Tag: MouthAtlas
+  m_IsVariant: 0
