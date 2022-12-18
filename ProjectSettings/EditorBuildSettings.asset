@@ -17,4 +17,43 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Street.unity
     guid: f0ae4f92125e71d45bdf1a4f00ae5acd
+  - enabled: 1
+    path: Assets/Scenes/Works.unity
+    guid: c5b0bde039b812c45b2bc0ae232523bb
+  - enabled: 1
+    path: Assets/Scenes/SearchResources.unity
+    guid: 1df858c42e57b5a4ba6770c861aeb7d9
+  - enabled: 1
+    path: Assets/Scenes/Skills.unity
+    guid: c8d40c4779854f143a096698228b6993
+  - enabled: 1
+    path: Assets/Scenes/Sale.unity
+    guid: 606896c925df4bf498ebe02dfda5b731
+  - enabled: 1
+    path: Assets/Scenes/Property.unity
+    guid: fa89e302b57c19a42ad9a4043490bad2
+  - enabled: 1
+    path: Assets/Scenes/Market.unity
+    guid: 90b93333d523c4e4ebbd0e8838206849
+  - enabled: 1
+    path: Assets/Scenes/Invest.unity
+    guid: fcab463be44af7b4193116b3c7df9929
+  - enabled: 1
+    path: Assets/Scenes/Health.unity
+    guid: 5b1ace577ba29ef48a658a7e4de63ef4
+  - enabled: 1
+    path: Assets/Scenes/Happiness.unity
+    guid: a59adb417ea414e42bd5eb3bef0ac105
+  - enabled: 1
+    path: Assets/Scenes/Eat.unity
+    guid: 95942dc4a82f7ae4091b4b5a217358b3
+  - enabled: 1
+    path: Assets/Scenes/Documents.unity
+    guid: 3156d528682fb5c41a6de0123e3cff12
+  - enabled: 1
+    path: Assets/Scenes/Casino.unity
+    guid: 7c13347dc6e833a4d98e44f57a2ae48c
+  - enabled: 1
+    path: Assets/Scenes/Care.unity
+    guid: 320c98764720e614483ff395e434a836
   m_configObjects: {}

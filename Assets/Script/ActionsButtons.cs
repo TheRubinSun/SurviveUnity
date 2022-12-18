@@ -8,7 +8,7 @@ public class ActionsButtons : MonoBehaviour
     [SerializeField] private TimeStata timeStataScript;
     [SerializeField] private Face faceScript;
     [SerializeField] private MainLogic mainLogicScript;
-
+    [SerializeField] private PlayerPanel playerPanelScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +33,7 @@ public class ActionsButtons : MonoBehaviour
         timeStataScript.UpdateTime();
         faceScript.UpdateFace();
         mainLogicScript.AllUpdate();
+        playerPanelScript.UpdateInfo();
     }
     public void AddActions(int count)
     {
@@ -60,7 +61,7 @@ public class ActionsButtons : MonoBehaviour
     }
     public void CutBread()
     {
-        Player.lvlBread = 1;
+        Player.lvlBread = 0;
         AddAction();
     }
    

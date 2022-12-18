@@ -11,14 +11,14 @@ public class PlayerPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateInfo();
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateInfo()
     {
         string textInfoStr = "";
-        textInfoStr += $"    {Player.name}\n";
+        textInfoStr += $"Имя: {Player.name}\n";
         textInfoStr += $"Деньги: {Player.money}\n";
         textInfoStr += $"Дней: {Player.CurDay}/365\n";
         textInfoStr += $"Действий: {Player.CounterActionsDay}\n";
