@@ -24,7 +24,7 @@ public class ActionsButtons : MonoBehaviour
     
     public void AddAction()
     {
-        MainLogic.players[0].AddActions();
+        Player.CurActionDay++;
         UpdateAfterAction();
     }
     private void UpdateAfterAction()

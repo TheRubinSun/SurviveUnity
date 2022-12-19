@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Face : MonoBehaviour
 {
@@ -32,12 +33,12 @@ public class Face : MonoBehaviour
 
     public void UpdateFace()
     {
-        spriteRendererHead.sprite = spriteAtlasHead.GetSprite($"Head {MainLogic.players[0].GetHead()}");
-        spriteRendererHair.sprite = spriteAtlasHair.GetSprite($"Hair {MainLogic.players[0].GetHair()}");
-        spriteRendererNose.sprite = spriteAtlasNose.GetSprite($"Nose {MainLogic.players[0].GetNose()}");
-        spriteRendererMouth.sprite = spriteAtlasMouth.GetSprite($"Mouth {MainLogic.players[0].GetMouth()}");
-        spriteRendererEye.sprite = spriteAtlasEye.GetSprite($"Eye {MainLogic.players[0].GetEye()}");
-        spriteRendererBeard.sprite = spriteAtlasBeard.GetSprite($"Beard {MainLogic.players[0].GetLvlBread()}");
+        spriteRendererHead.sprite = spriteAtlasHead.GetSprite($"Head {Player.GetHead()}");
+        spriteRendererHair.sprite = spriteAtlasHair.GetSprite($"Hair {Player.GetHair()}");
+        spriteRendererNose.sprite = spriteAtlasNose.GetSprite($"Nose {Player.GetNose()}");
+        spriteRendererMouth.sprite = spriteAtlasMouth.GetSprite($"Mouth {Player.GetMouth()}");
+        spriteRendererEye.sprite = spriteAtlasEye.GetSprite($"Eye {Player.GetEye()}");
+        spriteRendererBeard.sprite = spriteAtlasBeard.GetSprite($"Beard {Player.GetLvlBread()}");
         
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //Личность
-    public static string name = "";
+    public static string name;
     public static int dayB;//из 365
     public static int dataDayB;//День в месяце др
     public static int monthB;
@@ -97,39 +97,35 @@ public class Player : MonoBehaviour
     public static int [] CountPromotio = new int[5];//Массив акций игрока
 
 
-    public string GetName()
+    public static string GetName()
     {
         return name;
     }
-    public int GetHead()
+    public static int GetHead()
     {
         return head;
     }
-    public int GetHair()
+    public static int GetHair()
     {
         return hair;
     }
-    public int GetNose()
+    public static int GetNose()
     {
         return nose;
     }
-    public int GetMouth()
+    public static int GetMouth()
     {
         return mouth;
     }
-    public int GetEye()
+    public static int GetEye()
     {
         return eyes;
     }
-    public int GetBeard()
+    public static int GetBeard()
     {
         return beard;
     }
-    public void AddActions()
-    {
-        CurActionDay++;
-    }
-    public int GetLvlBread()
+    public static int GetLvlBread()
     {
         return lvlBread;
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 883944952689935173}
   - component: {fileID: 883944952689935172}
   - component: {fileID: 883944952689935227}
+  - component: {fileID: 7274508564038082258}
   m_Layer: 0
   m_Name: LogicGame
   m_TagString: Untagged
@@ -55,5 +56,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43d66ecbcadc593419f6b6a7db6730f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7274508564038082258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883944952689935226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4605df825a95e4e8c286e491d57bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
