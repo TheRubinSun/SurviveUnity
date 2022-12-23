@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SearchResources : MonoBehaviour
+public class EventsGame : MonoBehaviour
 {
     [SerializeField] ActionsButtons actionsButtonsScript;
     public Text info;

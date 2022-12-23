@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class BarNeed : MonoBehaviour
@@ -17,7 +18,20 @@ public class BarNeed : MonoBehaviour
     public Image barExp;
     public Text textExp;
     public GameObject lvlIcon;
+    public SpriteRenderer lvlIconRender;
+    public SpriteAtlas lvlsIconAtals;
+
     // Start is called before the first frame update
+    private void OnEnable()
+    {
+        ActionsButtons.OneAction += UpdateBars;
+        ActionsButtons.OneAction += UpdateLvlIcon;
+    }
+    private void OnDisable()
+    {
+        ActionsButtons.OneAction -= UpdateBars;
+        ActionsButtons.OneAction -= UpdateLvlIcon;
+    }
     void Start()
     {
         UpdateBars();
@@ -39,49 +53,66 @@ public class BarNeed : MonoBehaviour
         float exp = (((float)Player.ex)/(float)Player.nextExpLvl);
         barExp.fillAmount = exp;
         textExp.text = $"{Player.ex}/{Player.nextExpLvl}";
-        UpdateLvlIcon();
     }
     void UpdateLvlIcon()
     {
-        if(Player.lvl == 1)
+        switch(Player.lvl)
         {
-            lvlIcon.GetComponent<Animator>().Play("lvl1");
-        }
-        else if (Player.lvl == 2)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl2");
-        }
-        else if (Player.lvl == 3)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl3");
-        }
-        else if (Player.lvl == 4)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl4");
-        }
-        else if (Player.lvl == 5)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl5");
-        }
-        else if (Player.lvl == 6)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl6");
-        }
-        else if (Player.lvl == 7)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl7");
-        }
-        else if (Player.lvl == 8)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl8");
-        }
-        else if (Player.lvl == 9)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl9");
-        }
-        else if (Player.lvl == 10)
-        {
-            lvlIcon.GetComponent<Animator>().Play("lvl10");
+            case 1:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("1");
+                    break;
+                }
+            case 2:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("2");
+                    break;
+                }
+            case 3:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("3");
+                    break;
+                }
+            case 4:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("4");
+                    break;
+                }
+            case 5:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("5");
+                    break;
+                }
+            case 6:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("6");
+                    break;
+                }
+            case 7:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("7");
+                    break;
+                }
+            case 8:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("8");
+                    break;
+                }
+            case 9:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("9");
+                    break;
+                }
+            case 10:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("10");
+                    break;
+                }
+            default:
+                {
+                    lvlIconRender.sprite = lvlsIconAtals.GetSprite("10");
+                    break;
+                }
         }
     }
 }

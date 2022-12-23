@@ -307,6 +307,11 @@ public class FaceEdit : MonoBehaviour
     MainLogic mainLogic = new MainLogic();
     public void Okey()
     {
+        Player.priceBottle = Random.Range(2, 9);
+        Player.priceBerries = Random.Range(100, 400);
+        Player.priceCopper = Random.Range(250, 401);
+        Player.priceElectronics = Random.Range(800, 2000);
+
         string name = GameObject.Find("TextName").GetComponent<Text>().text;
         mainLogic.CreatePlayer(name, curEye, curHair, 1, curHead, curMouth, curNose, curBeard);
         SceneManager.LoadScene("Street");

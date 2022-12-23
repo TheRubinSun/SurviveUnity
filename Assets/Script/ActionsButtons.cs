@@ -3,38 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class ActionsButtons : MonoBehaviour
 {
-    [SerializeField] private BarNeed barNeedScript;
-    [SerializeField] private TimeStata timeStataScript;
-    [SerializeField] private Face faceScript;
-    [SerializeField] private MainLogic mainLogicScript;
-    [SerializeField] private PlayerPanel playerPanelScript;
-    // Start is called before the first frame update
+    public delegate void DelAdd();
+    public static event DelAdd OneAction;
+
+    //[SerializeField] private BarNeed barNeedScript;
+    //[SerializeField] private TimeStata timeStataScript;
+    //[SerializeField] private Face faceScript;
+    //[SerializeField] private MainLogic mainLogicScript;
+    //[SerializeField] private PlayerPanel playerPanelScript;
+    
     void Start()
     {
+        OneAction?.Invoke();
     }
  
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        GameEvents.ExecuteButton += AddAction;
 
     }
-    
+    private void OnDisable()
+    {
+        GameEvents.ExecuteButton -= AddAction;
+    }
+
     public void AddAction()
     {
         Player.CurActionDay++;
-        UpdateAfterAction();
+        //UpdateAfterAction();
+        OneAction?.Invoke();
     }
     private void UpdateAfterAction()
     {
-        mainLogicScript.AllUpdate();
-        barNeedScript.UpdateBars();
-        timeStataScript.UpdateTime();
-        faceScript.UpdateFace();
-        mainLogicScript.AllUpdate();
-        playerPanelScript.UpdateInfo();
+        //mainLogicScript.AllUpdate();
+        //barNeedScript.UpdateBars();
+        //timeStataScript.UpdateTime();
+        //faceScript.UpdateFace();
+        //mainLogicScript.AllUpdate();
+        //playerPanelScript.UpdateInfo();
     }
     public void AddActions(int count)
     {

@@ -8,6 +8,14 @@ public class MainLogic : MonoBehaviour
     {
         AllUpdate();
     }
+    private void OnEnable()
+    {
+        ActionsButtons.OneAction += AllUpdate;
+    }
+    private void OnDisable()
+    {
+        ActionsButtons.OneAction -= AllUpdate;
+    }
     public void AllUpdate()
     {
         //Player.CurMonth = ThisMounth(Player.CurDay);
@@ -238,7 +246,12 @@ public class MainLogic : MonoBehaviour
             Player.TotalDaysInGame++;
             Player.CurDay++;
 
-            if(Player.haveGarden > 0 && Player.sailty < Player.maxSailty)//Если есть огород
+            Player.priceBottle = Random.Range(2, 9);
+            Player.priceBerries = Random.Range(100, 400);
+            Player.priceCopper = Random.Range(250, 401);
+            Player.priceElectronics = Random.Range(800, 2000);
+
+            if (Player.haveGarden > 0 && Player.sailty < Player.maxSailty)//Если есть огород
             {
                 Player.sailty += Player.haveGarden * 3;//3 * на кол-во огородов за 1 день
             }
@@ -249,8 +262,10 @@ public class MainLogic : MonoBehaviour
 
     //=====================================================================================================================================
     //Подсчет всех денег
+    
     void CountedMoney()
     {
+        /*
         if(Player.money > Player.tempMoney)
         {
             Player.totalMoney += Player.money - Player.tempMoney; //Разницу прироста
@@ -260,6 +275,7 @@ public class MainLogic : MonoBehaviour
         {
             Player.tempMoney = Player.money;//Если деньги потратили
         }
+        */
     }
     //=====================================================================================================================================
     //Подсчет всех действий
@@ -324,13 +340,5 @@ public class MainLogic : MonoBehaviour
         int yearsOld = Player.CurYears-yearB;
         players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, money));
         //Player player = new Player(name,dayB, monthB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard,curDay, money);
-    }
-    public static void Save()
-    {
-
-    }
-    void Action()
-    {
-
     }
 }

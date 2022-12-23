@@ -9,9 +9,20 @@ public class SaveAfterClose : MonoBehaviour
 
     private Save sv = new Save();
     private string path;
+    private string pathStartGame;
+
+    private void OnEnable()
+    {
+        CheckEvents.EventDeath += SaveButton;
+    }
+    private void OnDisable()
+    {
+        CheckEvents.EventDeath -= SaveButton;
+    }
     void Start()
     {
         path = Application.persistentDataPath + "/Save.json";
+        pathStartGame = Application.persistentDataPath + "/StartSavePerson.json";
         InvokeRepeating("SaveButton", 1, 10);
     }
     private void OnApplicationPause(bool pause)//для андроид
@@ -39,7 +50,6 @@ public class SaveAfterClose : MonoBehaviour
             File.Delete(path);
         }
     }
-
     public void SaveButton()
     {
         if (Player.sailty > 0 && Player.health > 0 && Player.hapiness > 0)
@@ -52,7 +62,6 @@ public class SaveAfterClose : MonoBehaviour
             File.Delete(path);
         }
     }
-
     public void SaveFile()
     {
         //Личность
@@ -135,11 +144,15 @@ public class SaveAfterClose : MonoBehaviour
         //Инвестиции
         //Реусурсы
         sv.saveCountBottle = Player.countBottle;
+        sv.savePriceBottle = Player.priceBottle;
         sv.saveCountBerries = Player.countBerries;
+        sv.savePriceBerries = Player.priceBerries;
         sv.saveCountCopper = Player.countCopper;
+        sv.savePriceCopper = Player.priceCopper;
         sv.saveCountElectronics = Player.countElectronics;
+        sv.savePriceElectronics = Player.priceElectronics;
         //Разное
-        sv.saveMoneyForBD = Player.moneyForBD;
+        sv.saveMoneyPercentForBD = Player.moneyPercentForBD;
         sv.saveDeathBool = Player.DeathBool;
         //Временные переменные
         sv.saveRememberDaysOne = Player.RememberDaysOne; //Для акт угля
@@ -232,11 +245,15 @@ public class Save
     //Инвестиции
     //Реусурсы
     public int saveCountBottle;
+    public int savePriceBottle;
     public int saveCountBerries;
+    public int savePriceBerries;
     public int saveCountCopper;
+    public int savePriceCopper;
     public int saveCountElectronics;
+    public int savePriceElectronics;
     //Разное
-    public int saveMoneyForBD;
+    public int saveMoneyPercentForBD;
     public bool saveDeathBool;
     //Временные переменные
     public int saveRememberDaysOne; //Для акт угля

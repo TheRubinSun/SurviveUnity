@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LvlAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 08b0daa4666de3c4cab334206b4cf1a5, type: 3}
+    - {fileID: 2800000, guid: 74d9ed2edf8a8f245861fd461b7b6b12, type: 3}
+    - {fileID: 2800000, guid: fc008d829f95dee4c9c48d60969c36ab, type: 3}
+    - {fileID: 2800000, guid: 3340c3a7cfef45a429cda9a80bbc9f08, type: 3}
+    - {fileID: 2800000, guid: 4876a1b01fcbde34880c785b4219cc06, type: 3}
+    - {fileID: 2800000, guid: ed551743717d96841ac741b6c64c6259, type: 3}
+    - {fileID: 2800000, guid: 4d72b10f374c5a444954454dde82b9d5, type: 3}
+    - {fileID: 2800000, guid: 320ffe002ce58ea44a2d8f6ccddc6339, type: 3}
+    - {fileID: 2800000, guid: 3ca395d357e79b04ca06fef9852c0724, type: 3}
+    - {fileID: 2800000, guid: 8c0dffad6b9dc53459661f8878052eb3, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 320ffe002ce58ea44a2d8f6ccddc6339, type: 3}
+  - {fileID: 21300000, guid: 4876a1b01fcbde34880c785b4219cc06, type: 3}
+  - {fileID: 21300000, guid: fc008d829f95dee4c9c48d60969c36ab, type: 3}
+  - {fileID: 21300000, guid: ed551743717d96841ac741b6c64c6259, type: 3}
+  - {fileID: 21300000, guid: 3ca395d357e79b04ca06fef9852c0724, type: 3}
+  - {fileID: 21300000, guid: 08b0daa4666de3c4cab334206b4cf1a5, type: 3}
+  - {fileID: 21300000, guid: 3340c3a7cfef45a429cda9a80bbc9f08, type: 3}
+  - {fileID: 21300000, guid: 8c0dffad6b9dc53459661f8878052eb3, type: 3}
+  - {fileID: 21300000, guid: 74d9ed2edf8a8f245861fd461b7b6b12, type: 3}
+  - {fileID: 21300000, guid: 4d72b10f374c5a444954454dde82b9d5, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 8
+  - 5
+  - 3
+  - 6
+  - 9
+  - 1
+  - 4
+  - 10
+  - 2
+  - 7
+  m_RenderDataMap: {}
+  m_Tag: LvlAtlas
+  m_IsVariant: 0

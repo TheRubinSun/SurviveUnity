@@ -15,11 +15,25 @@ public class PlayerPanel : MonoBehaviour
         UpdateInfo();
         UpdateInfoResurces();
     }
+    private void OnEnable()
+    {
+        ActionsButtons.OneAction += UpdateInfo;
+        ActionsButtons.OneAction += UpdateInfoResurces;
+
+    }
+    private void OnDisable()
+    {
+        ActionsButtons.OneAction -= UpdateInfo;
+        ActionsButtons.OneAction -= UpdateInfoResurces;
+
+    }
 
     string textInfoStr;
     string infoResurces;
     int countVariantRec;
     // Update is called once per frame
+
+    
     public void UpdateInfo()
     {
         textInfoStr = "";
@@ -31,27 +45,25 @@ public class PlayerPanel : MonoBehaviour
         textInfoStr += $"Тек дейв: {Player.CurActionDay}\n";
         textInfo.text = textInfoStr;
 
-        UpdateInfoResurces();
+        
     }
 
     public void UpdateInfoResurces()
     {
         infoResurces = "";
-        countVariantRec = 0;
+        infoResurces += $"Деньги: {Player.money}\t";
         if (Player.countBottle > 0)
         {
-            infoResurces += $"Бутылок: {Player.countBottle}";
+            infoResurces += $"Бутылок: {Player.countBottle}\t";
             countVariantRec++;
         }
         if (Player.countCopper > 0)
         {
-            if(countVariantRec>0) infoResurces+="\t";
-            infoResurces += $"Меди: {((float)Player.countCopper)/10} кг.";
+            infoResurces += $"Меди: {((float)Player.countCopper)/10} кг.\t";
             countVariantRec++;
         }
         if (Player.countElectronics > 0)
         {
-            if (countVariantRec > 0) infoResurces += "\t";
             infoResurces += $"Электроники: {Player.countElectronics}";
         }
         textInfoResurces.text = infoResurces;

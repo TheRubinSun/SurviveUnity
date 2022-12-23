@@ -17,6 +17,14 @@ public class TimeStata : MonoBehaviour
     {
         UpdateTime();
     }
+    private void OnEnable()
+    {
+        ActionsButtons.OneAction += UpdateTime;
+    }
+    private void OnDisable()
+    {
+        ActionsButtons.OneAction -= UpdateTime;
+    }
 
     // Update is called once per frame
     public void UpdateTime()

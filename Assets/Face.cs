@@ -12,7 +12,15 @@ public class Face : MonoBehaviour
     {
         UpdateFace();
     }
-    
+    private void OnEnable()
+    {
+        ActionsButtons.OneAction += UpdateFace;
+    }
+    private void OnDisable()
+    {
+        ActionsButtons.OneAction -= UpdateFace;
+    }
+
     public SpriteAtlas spriteAtlasHead;
     public SpriteRenderer spriteRendererHead;
 

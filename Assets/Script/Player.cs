@@ -5,96 +5,100 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //Личность
-    public static string name;
-    public static int dayB;//из 365
-    public static int dataDayB;//День в месяце др
-    public static int monthB;
-    public static int yearB;
-    public static int yearsOld;
+    public static string name { get;set;}
+    public static int dayB { get; set; }//из 365
+    public static int dataDayB { get;set;}//День в месяце др
+    public static int monthB { get; set; }
+    public static int yearB { get; set; }
+    public static int yearsOld { get; set; }
     //Внешность
-    public static int eyes;
-    public static int hair;
-    public static int colorhair;
-    public static int head;
-    public static int mouth;
-    public static int nose;
-    public static int beard;
+    public static int eyes { get; set; }
+    public static int hair { get; set; }
+    public static int colorhair { get; set; }
+    public static int head { get; set; }
+    public static int mouth { get; set; }
+    public static int nose { get; set; }
+    public static int beard { get; set; }
     //Нужды
-    public static int sailty;
-    public static int health;
-    public static int hapiness;
-    public static int maxSailty;
-    public static int maxHealth;
-    public static int maxHapiness;
+    public static int sailty { get; set; }
+    public static int health { get; set; }
+    public static int hapiness { get; set; }
+    public static int maxSailty { get; set; }
+    public static int maxHealth { get; set; }
+    public static int maxHapiness { get; set; }
     //Навыки
-    public static int power;
-    public static int powerNav;
-    public static int intellect;
-    public static int intelNav;
-    public static int handAggility;
-    public static int handAggNav;
+    public static int power { get; set; }
+    public static int powerNav { get; set; }
+    public static int intellect { get; set; }
+    public static int intelNav { get; set; }
+    public static int handAggility { get; set; }
+    public static int handAggNav { get; set; }
 
 
-    public static int reputation;
-    public static int lvlBread;
-    public static int motivation;
+    public static int reputation { get; set; }
+    public static int lvlBread { get; set; }
+    public static int motivation { get; set; }
     //Время и статистика
-    public static int CurActionDay;//Текущие действие 1/3
-    public static int CounterActionsDay;//Счетчик действий
-    public static int CurDay;//Текущий день
-    public static int DataInMounth;//День в месяце
-    public static int TotalDaysInGame;//Всего дней в игре
-    public static int CurYears;//Текущий год
-    public static int CurMonth;//Текущий месяц
-    public static string CurNameMonth;//Название текущего месяца
-    public static string CurNameSeason;//Название текущего сезона
+    public static int CurActionDay { get; set; }//Текущие действие 1/3
+    public static int CounterActionsDay { get; set; }//Счетчик действий
+    public static int CurDay { get; set; }//Текущий день
+    public static int DataInMounth { get; set; }//День в месяце
+    public static int TotalDaysInGame { get; set; }//Всего дней в игре
+    public static int CurYears { get; set; }//Текущий год
+    public static int CurMonth { get; set; }//Текущий месяц
+    public static string CurNameMonth { get; set; }//Название текущего месяца
+    public static string CurNameSeason { get; set; }//Название текущего сезона
     //Имущество предметы
-    public static int money;
-    public static int totalMoney;
-    public static int tempMoney;
+    public static int money { get; set; }
+    public static int totalMoney { get; set; }
+    public static int tempMoney { get; set; }
     //Имущество жилье
-    public static bool haveTent;
-    public static bool haveGarage;
-    public static bool haveSmallApartment;
-    public static bool haveBigApartment;
-    public static bool haveHouse;
-    public static int lvlComfort;
+    public static bool haveTent { get; set; }
+    public static bool haveGarage { get; set; }
+    public static bool haveSmallApartment { get; set; }
+    public static bool haveBigApartment { get; set; }
+    public static bool haveHouse { get; set; }
+    public static int lvlComfort { get; set; }
     //Имущество предметы
-    public static bool haveSmartphone;
-    public static bool haveComputer;
+    public static bool haveSmartphone { get;set;}
+    public static bool haveComputer { get;set;}
     //Документы
-    public static bool havePassport;
-    public static bool haveShcoolAt;
-    public static bool haveDiplCollage;
-    public static bool haveDiplVus;
-    public static bool haveMagistr;
+    public static bool havePassport { get;set;}
+    public static bool haveShcoolAt { get;set;}
+    public static bool haveDiplCollage { get;set;}
+    public static bool haveDiplVus { get;set;}
+    public static bool haveMagistr { get;set;}
     //Опыт
-    public static int ex;
-    public static int lvl;
-    public static int oldlvl;
-    public static float nextExpLvl;
-    public static int totalSkillPoint;
-    public static int freeSkillPoint;
+    public static int ex { get;set;}
+    public static int lvl { get;set;}
+    public static int oldlvl { get;set;}
+    public static float nextExpLvl { get;set;}
+    public static int totalSkillPoint { get;set;}
+    public static int freeSkillPoint { get;set;}
     //Бизнес
     //Авто-нужды
-    public static int haveGarden;
-    public static int lvlSubForEat;
-    public static int lvlSubForHealth;
-    public static int lvlSubForHapiness;
+    public static int haveGarden { get;set;}
+    public static int lvlSubForEat { get;set;}
+    public static int lvlSubForHealth { get;set;}
+    public static int lvlSubForHapiness { get;set;}
     //Инвестиции
     //Реусурсы
-    public static int countBottle;
-    public static int countBerries;
-    public static int countCopper;
-    public static int countElectronics;
+    public static int countBottle { get;set;}
+    public static int priceBottle { get; set; }
+    public static int countBerries { get;set;}
+    public static int priceBerries { get; set; }
+    public static int countCopper { get;set;}
+    public static int priceCopper { get; set; }
+    public static int countElectronics { get;set;}
+    public static int priceElectronics { get; set; }
     //Разное
-    public static int moneyForBD;
-    public static bool DeathBool;
+    public static int moneyPercentForBD { get;set;}
+    public static bool DeathBool { get;set;}
     //Временные переменные
-    public static int RememberDaysOne; //Для акт угля
-    public static int RememberDaysTwo; //Для таблеток
+    public static int RememberDaysOne { get;set;} //Для акт угля
+    public static int RememberDaysTwo { get;set;} //Для таблеток
     //Акции
-    public static int [] CountPromotio = new int[5];//Массив акций игрока
+    public static int [] CountPromotio { get; set; }//Массив акций игрока
 
 
     public static string GetName()
@@ -129,7 +133,11 @@ public class Player : MonoBehaviour
     {
         return lvlBread;
     }
-
+    public static void PlayerEarnedMoney(int earnMoney)
+    {
+        Player.money += earnMoney;
+        Player.totalMoney += earnMoney;
+    }
 
     public Player
         (
@@ -263,7 +271,7 @@ public class Player : MonoBehaviour
         }
         //Разное
         {
-            moneyForBD = 10;//Деньги за День рождения
+            moneyPercentForBD = 5;//Деньги за День рождения
             DeathBool = true;//Для респауна
         }
         //Временные переменные

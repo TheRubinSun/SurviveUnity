@@ -4,16 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoadData : MonoBehaviour
 {
     private Save sv = new Save();
     private string path;
-
+    public Text textVersion;
 
     void Start()
     {
+        textVersion.text = Application.version;
         path = Application.persistentDataPath + "/Save.json";
+        Invoke("StartGame",1.5f);
+    }
+    void StartGame()
+    {
         if (File.Exists(path))//При загрузке проверяет есть ли файл
         {
             sv = JsonUtility.FromJson<Save>(File.ReadAllText(path));//Загружает все данные 
@@ -110,8 +116,12 @@ public class LoadData : MonoBehaviour
         Player.countBerries = sv.saveCountBerries;
         Player.countCopper = sv.saveCountCopper;
         Player.countElectronics = sv.saveCountElectronics;
+        Player.priceBottle = sv.savePriceBottle;
+        Player.priceBerries = sv.savePriceBerries;
+        Player.priceCopper = sv.savePriceCopper;
+        Player.priceElectronics = sv.savePriceElectronics;
         //Разное
-        Player.moneyForBD = sv.saveMoneyForBD;
+        Player.moneyPercentForBD = sv.saveMoneyForBD;
         Player.DeathBool = sv.saveDeathBool;
         //Временные переменные
         Player.RememberDaysOne = sv.saveRememberDaysOne; //Для акт угля
@@ -206,9 +216,13 @@ public class LoadData : MonoBehaviour
         //Инвестиции
         //Реусурсы
         public int saveCountBottle;
+        public int savePriceBottle;
         public int saveCountBerries;
+        public int savePriceBerries;
         public int saveCountCopper;
+        public int savePriceCopper;
         public int saveCountElectronics;
+        public int savePriceElectronics;
         //Разное
         public int saveMoneyForBD;
         public bool saveDeathBool;
