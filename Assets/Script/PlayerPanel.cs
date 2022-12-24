@@ -37,7 +37,7 @@ public class PlayerPanel : MonoBehaviour
     public void UpdateInfo()
     {
         textInfoStr = "";
-        textInfoStr += $"Имя: {Player.name}\n";
+        textInfoStr += $"Имя: {Player.Name}\n";
         textInfoStr += $"Деньги: {Player.money}\n";
         textInfoStr += $"Дней: {Player.CurDay}/365\n";
         textInfoStr += $"Действий: {Player.CounterActionsDay}\n";

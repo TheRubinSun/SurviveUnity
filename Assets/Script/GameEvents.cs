@@ -81,7 +81,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countBottle > 0)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countBottle} бутылок\n по {Player.priceBottle} руб. за 1 бутылку\nИ получили:\n{Player.countBottle * Player.priceBottle} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countBottle} бутылок\n по {Player.priceBottle} руб. за 1 бутылку\nи получили:\n{Player.countBottle * Player.priceBottle} рублей");
             Player.PlayerEarnedMoney(Player.countBottle * Player.priceBottle);
             Player.countBottle = 0;
             ExecuteButton?.Invoke();
@@ -92,7 +92,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countBerries > 0)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countBerries} кг. ягод\n по {Player.priceBerries} руб. за 1 кг\nИ получили:\n{Player.countBerries * Player.priceBerries} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countBerries} кг. ягод\n по {Player.priceBerries} руб. за 1 кг\nи получили:\n{Player.countBerries * Player.priceBerries} рублей");
             Player.PlayerEarnedMoney(Player.countBerries * Player.priceBerries);
             Player.countBerries = 0;
             ExecuteButton?.Invoke();
@@ -103,7 +103,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countCopper >= 10)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countCopper / 10} кг. меди\n по {Player.priceCopper} руб. за 1 кг меди\nИ получили:\n{Player.countCopper / 10 * Player.priceCopper} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countCopper / 10} кг. меди\n по {Player.priceCopper} руб. за 1 кг меди\nи получили:\n{Player.countCopper / 10 * Player.priceCopper} рублей");
             Player.PlayerEarnedMoney((int)(Player.countCopper/10) * Player.priceCopper);
             Player.countCopper = 0;
             ExecuteButton?.Invoke();
@@ -114,7 +114,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countElectronics > 0)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countElectronics} электроники\n по {Player.priceElectronics} руб. шт за 1 электронику\nИ получили:\n{Player.countElectronics * Player.priceElectronics} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countElectronics} электроники\n по {Player.priceElectronics} руб. шт за 1 электронику\nи получили:\n{Player.countElectronics * Player.priceElectronics} рублей");
             Player.PlayerEarnedMoney(Player.countElectronics * Player.priceElectronics);
             Player.countElectronics = 0;
             ExecuteButton?.Invoke();

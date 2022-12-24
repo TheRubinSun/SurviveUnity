@@ -300,7 +300,7 @@ public class MainLogic : MonoBehaviour
     }
     static int b = 0;//Защита при загрузке опыта
     static bool prov = false;
-    static bool prov2 = false;
+    //static bool prov2 = false;
     void LvlUP()
     {
         if(Player.ex >= Player.nextExpLvl)
@@ -329,8 +329,10 @@ public class MainLogic : MonoBehaviour
 
     //=====================================================================================================================================
     //Создание персонажа 
+
+    
     public static List<Player> players = new List<Player>();
-    public void CreatePlayer(string name,int eyes,int hair,int colorhair,int face,int mounth,int noise, int beard)
+    public static void CreatePlayer(string name,int eyes,int hair,int colorhair,int face,int mounth,int noise, int beard)
     {
         int money = 800;
         int dayB = Random.Range(1, 365);

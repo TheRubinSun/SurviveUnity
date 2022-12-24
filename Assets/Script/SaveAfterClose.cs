@@ -65,7 +65,7 @@ public class SaveAfterClose : MonoBehaviour
     public void SaveFile()
     {
         //Ћичность
-        sv.saveName = Player.name;
+        sv.saveName = Player.Name;
         sv.saveDayB = Player.dayB;//из 365
         sv.saveDataDayB = Player.dataDayB;//ƒень в мес€це др
         sv.saveMonthB = Player.monthB;

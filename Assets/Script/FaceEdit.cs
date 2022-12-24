@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Sprites;
 using UnityEngine.U2D;
 
 public class FaceEdit : MonoBehaviour
@@ -304,7 +303,7 @@ public class FaceEdit : MonoBehaviour
         }
         UpdateBeard();
     }
-    MainLogic mainLogic = new MainLogic();
+
     public void Okey()
     {
         Player.priceBottle = Random.Range(2, 9);
@@ -313,7 +312,8 @@ public class FaceEdit : MonoBehaviour
         Player.priceElectronics = Random.Range(800, 2000);
 
         string name = GameObject.Find("TextName").GetComponent<Text>().text;
-        mainLogic.CreatePlayer(name, curEye, curHair, 1, curHead, curMouth, curNose, curBeard);
+
+        MainLogic.CreatePlayer(name, curEye, curHair, 1, curHead, curMouth, curNose, curBeard);
         SceneManager.LoadScene("Street");
         //DontDestroyOnLoad();
     }

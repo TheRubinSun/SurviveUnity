@@ -14,9 +14,9 @@ public class LoadData : MonoBehaviour
 
     void Start()
     {
-        textVersion.text = Application.version;
+        textVersion.text = "Version: "+Application.version;
         path = Application.persistentDataPath + "/Save.json";
-        Invoke("StartGame",1.5f);
+        Invoke("StartGame",1);
     }
     void StartGame()
     {
@@ -34,7 +34,7 @@ public class LoadData : MonoBehaviour
     public void Load()
     {
         //Ћичность
-        Player.name = sv.saveName;
+        Player.Name = sv.saveName;
         Player.dayB = sv.saveDayB;//из 365
         Player.dataDayB = sv.saveDataDayB;//ƒень в мес€це др
         Player.monthB = sv.saveMonthB;

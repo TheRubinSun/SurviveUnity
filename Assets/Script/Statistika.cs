@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +9,7 @@ public class Statistika : MonoBehaviour
     void Start()
     {
         string stata = "";
-        stata += Player.name + "\n";
+        stata += Player.Name + "\n";
         stata += $"Дата: {Player.DataInMounth}.{Player.CurMonth}.{Player.CurYears}" + "\n";
         stata += $"Дата рождения: {Player.dataDayB}.{Player.monthB}.{Player.yearB}" + "\n";
         stata += $"Текущий уровень: {Player.lvl}  опыта {Player.ex}/{Player.nextExpLvl}" + "\n";
