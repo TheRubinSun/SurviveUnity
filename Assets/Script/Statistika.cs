@@ -16,7 +16,22 @@ public class Statistika : MonoBehaviour
         stata += $"Название месяца: {Player.CurNameMonth}" + "\n";
         stata += $"Текущий сезон: {Player.CurNameSeason}" + "\n";
         stata += $"Всего пройденных дней: {Player.TotalDaysInGame}" + "\n";
-        stata += $"Всего заработанно денег: {Player.totalMoney}" + "\n";
+        stata += $"Всего заработанно денег: {Player.totalMoney}" + "\n" + "\n";
+
+        if (Player.haveHouse == true) stata += "Герой живет в своем доме" + "\n";
+        else if (Player.haveApartment == true) stata += "У героя своя квартира" + "\n";
+        else if (Player.haveGarage == true) stata += "Герой обустроил свой гараж" + "\n";
+        else if (Player.BrokenCar == true) stata += "Герой спит в салоне своего авто (хоть и сломанного)" + "\n";
+        else if (Player.haveTent == true) stata += "Герой переодически отдыхает в палатке" + "\n";
+        else stata += "Герой спит на скамейке" + "\n";
+
+        if (Player.Shoes > 0) stata += $"В обуви с износом: {Player.ShoesWear} дней в будущее" + "\n";
+        else stata += "Обувь: босой" + "\n";
+        if (Player.Clothes > 0) stata += $"Одет по вкусу с износом: {Player.ShoesWear} дней в будущее" + "\n";
+        else stata += "Одежда: в обносках" + "\n";
+        if (Player.haveSmartphone == true) stata += "Имеет смартфон" + "\n";
+        if (Player.Fridge == true) stata += "Имеет холодильник" + "\n";
+
         statistics.text = stata;
     }
 

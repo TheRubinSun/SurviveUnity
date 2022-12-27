@@ -25,13 +25,7 @@ public class GameEvents : MonoBehaviour
         int health = Random.Range(3, 6);
         int happines = Random.Range(6, 13);
 
-        Player.countBottle += bottle;
-        Player.countCopper += copper;
-        Player.countElectronics += electronics;
-        Player.sailty -= sailty;
-        Player.health -= health;
-        Player.hapiness -= happines;
-
+        PlayerSet(bottle, copper, electronics, -sailty, -health, -happines);
         OutputInfoResource(bottle, copper, electronics, sailty, health, happines);
 
         ExecuteButton?.Invoke();
@@ -53,13 +47,7 @@ public class GameEvents : MonoBehaviour
         int health = Random.Range(16, 25);
         int happines = Random.Range(30, 46);
 
-        Player.countBottle += bottle;
-        Player.countCopper += copper;
-        Player.countElectronics += electronics;
-        Player.sailty -= sailty;
-        Player.health -= health;
-        Player.hapiness -= happines;
-
+        PlayerSet(bottle, copper, electronics, -sailty, -health, -happines);
         OutputInfoResource(bottle, copper, electronics, sailty, health, happines);
 
         ExecuteButton?.Invoke();
@@ -81,7 +69,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countBottle > 0)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countBottle} бутылок\n по {Player.priceBottle} руб. за 1 бутылку\nи получили:\n{Player.countBottle * Player.priceBottle} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countBottle} бутылок\n по {Player.priceBottle} руб. за 1 бутылку\nи получили:\n{Player.countBottle * Player.priceBottle} Моулей");
             Player.PlayerEarnedMoney(Player.countBottle * Player.priceBottle);
             Player.countBottle = 0;
             ExecuteButton?.Invoke();
@@ -92,7 +80,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countBerries > 0)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countBerries} кг. ягод\n по {Player.priceBerries} руб. за 1 кг\nи получили:\n{Player.countBerries * Player.priceBerries} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countBerries} кг. ягод\n по {Player.priceBerries} руб. за 1 кг\nи получили:\n{Player.countBerries * Player.priceBerries} Моулей");
             Player.PlayerEarnedMoney(Player.countBerries * Player.priceBerries);
             Player.countBerries = 0;
             ExecuteButton?.Invoke();
@@ -103,7 +91,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countCopper >= 10)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countCopper / 10} кг. меди\n по {Player.priceCopper} руб. за 1 кг меди\nи получили:\n{Player.countCopper / 10 * Player.priceCopper} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countCopper / 10} кг. меди\n по {Player.priceCopper} руб. за 1 кг меди\nи получили:\n{Player.countCopper / 10 * Player.priceCopper} Моулей");
             Player.PlayerEarnedMoney((int)(Player.countCopper/10) * Player.priceCopper);
             Player.countCopper = 0;
             ExecuteButton?.Invoke();
@@ -114,7 +102,7 @@ public class GameEvents : MonoBehaviour
     {
         if (Player.countElectronics > 0)
         {
-            OutputInfoSaleRec($"Вы продали {Player.countElectronics} электроники\n по {Player.priceElectronics} руб. шт за 1 электронику\nи получили:\n{Player.countElectronics * Player.priceElectronics} рублей");
+            OutputInfoSaleRec($"Вы продали {Player.countElectronics} электроники\n по {Player.priceElectronics} руб. шт за 1 электронику\nи получили:\n{Player.countElectronics * Player.priceElectronics} Моулей");
             Player.PlayerEarnedMoney(Player.countElectronics * Player.priceElectronics);
             Player.countElectronics = 0;
             ExecuteButton?.Invoke();
@@ -124,6 +112,16 @@ public class GameEvents : MonoBehaviour
     void OutputInfoSaleRec(string warning)
     {
         info.text = warning;
+    }
+
+    void PlayerSet(int countBottle,int countCopper,int countElectronics,int sailty, int health,int happiness)
+    {
+        Player.countBottle += countBottle;
+        Player.countCopper += countCopper;
+        Player.countElectronics += countElectronics;
+        Player.sailty += sailty;
+        Player.health += health;
+        Player.happiness += happiness;
     }
     //===========================================================================================================
     public delegate void DelOpen();

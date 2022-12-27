@@ -217,9 +217,9 @@ public class MainLogic : MonoBehaviour
         {
             Player.health = Player.maxHealth;
         }
-        if (Player.hapiness > Player.maxHapiness)
+        if (Player.happiness > Player.maxHappiness)
         {
-            Player.hapiness = Player.maxHapiness;
+            Player.happiness = Player.maxHappiness;
         }
     }
     //=====================================================================================================================================

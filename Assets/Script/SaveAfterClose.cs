@@ -27,7 +27,7 @@ public class SaveAfterClose : MonoBehaviour
     }
     private void OnApplicationPause(bool pause)//для андроид
     {
-        if (Player.sailty > 0 && Player.health > 0 && Player.hapiness > 0 && (pause))
+        if (Player.sailty > 0 && Player.health > 0 && Player.happiness > 0 && (pause))
         {
             SaveFile();
             File.WriteAllText(path, JsonUtility.ToJson(sv));
@@ -40,7 +40,7 @@ public class SaveAfterClose : MonoBehaviour
 
     private void OnApplicationQuit()//Для ПК
     {
-        if (Player.sailty > 0 && Player.health > 0 && Player.hapiness > 0)
+        if (Player.sailty > 0 && Player.health > 0 && Player.happiness > 0)
         {
             SaveFile();
             File.WriteAllText(path, JsonUtility.ToJson(sv));
@@ -52,7 +52,7 @@ public class SaveAfterClose : MonoBehaviour
     }
     public void SaveButton()
     {
-        if (Player.sailty > 0 && Player.health > 0 && Player.hapiness > 0)
+        if (Player.sailty > 0 && Player.health > 0 && Player.happiness > 0)
         {
             SaveFile();
             File.WriteAllText(path, JsonUtility.ToJson(sv));
@@ -82,10 +82,10 @@ public class SaveAfterClose : MonoBehaviour
         //Нужды
         sv.saveSailty = Player.sailty;
         sv.saveHealth = Player.health;
-        sv.saveHapiness = Player.hapiness;
+        sv.saveHappiness = Player.happiness;
         sv.saveMaxSailty = Player.maxSailty;
         sv.saveMaxHealth = Player.maxHealth;
-        sv.saveMaxHapiness = Player.maxHapiness;
+        sv.savemaxHappiness = Player.maxHappiness;
         //Навыки
         sv.savePower = Player.power;
         sv.savePowerNav = Player.powerNav;
@@ -114,12 +114,17 @@ public class SaveAfterClose : MonoBehaviour
         sv.saveTempMoney = Player.tempMoney;
         //Имущество жилье
         sv.saveHaveTent = Player.haveTent;
+        sv.saveBrokenCar = Player.BrokenCar;
         sv.saveHaveGarage = Player.haveGarage;
-        sv.saveHaveSmallApartment = Player.haveSmallApartment;
-        sv.saveHaveBigApartment = Player.haveBigApartment;
+        sv.saveHaveApartment = Player.haveApartment;
         sv.saveHaveHouse = Player.haveHouse;
         sv.saveLvlComfort = Player.lvlComfort;
         //Имущество предметы
+        sv.saveShoes = Player.Shoes;
+        sv.saveShoesWear = Player.ShoesWear;
+        sv.saveClothes = Player.Clothes;
+        sv.saveClothesWear = Player.ClothesWear;
+        sv.saveFridge = Player.Fridge;
         sv.saveHaveSmartphone = Player.haveSmartphone;
         sv.saveHaveComputer = Player.haveComputer;
         //Документы
@@ -138,7 +143,8 @@ public class SaveAfterClose : MonoBehaviour
         //Бизнес
         //Авто-нужды
         sv.saveHaveGarden = Player.haveGarden;
-        sv.saveLvlSubForEat = Player.lvlSubForEat;
+        sv.saveEatOnWeek = Player.EatOnWeek;
+        sv.saveEatOnMonth = Player.EatOnMonth;
         sv.saveLvlSubForHealth = Player.lvlSubForHealth;
         sv.saveLvlSubForHapiness = Player.lvlSubForHapiness;
         //Инвестиции
@@ -184,10 +190,10 @@ public class Save
     //Нужды
     public int saveSailty;
     public int saveHealth;
-    public int saveHapiness;
+    public int saveHappiness;
     public int saveMaxSailty;
     public int saveMaxHealth;
-    public int saveMaxHapiness;
+    public int savemaxHappiness;
     //Навыки
     public int savePower;
     public int savePowerNav;
@@ -215,12 +221,17 @@ public class Save
     public int saveTempMoney;
     //Имущество жилье
     public bool saveHaveTent;
+    public bool saveBrokenCar;
     public bool saveHaveGarage;
-    public bool saveHaveSmallApartment;
-    public bool saveHaveBigApartment;
+    public bool saveHaveApartment;
     public bool saveHaveHouse;
     public int saveLvlComfort;
     //Имущество предметы
+    public int saveShoes;
+    public int saveShoesWear;
+    public int saveClothes;
+    public int saveClothesWear;
+    public bool saveFridge;
     public bool saveHaveSmartphone;
     public bool saveHaveComputer;
     //Документы
@@ -239,7 +250,8 @@ public class Save
     //Бизнес
     //Авто-нужды
     public int saveHaveGarden;
-    public int saveLvlSubForEat;
+    public int saveEatOnWeek;
+    public int saveEatOnMonth;
     public int saveLvlSubForHealth;
     public int saveLvlSubForHapiness;
     //Инвестиции

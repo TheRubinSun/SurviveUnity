@@ -22,10 +22,10 @@ public class Player : MonoBehaviour
     //Нужды
     public static int sailty { get; set; }
     public static int health { get; set; }
-    public static int hapiness { get; set; }
+    public static int happiness { get; set; }
     public static int maxSailty { get; set; }
     public static int maxHealth { get; set; }
-    public static int maxHapiness { get; set; }
+    public static int maxHappiness { get; set; }
     //Навыки
     public static int power { get; set; }
     public static int powerNav { get; set; }
@@ -54,13 +54,18 @@ public class Player : MonoBehaviour
     public static int tempMoney { get; set; }
     //Имущество жилье
     public static bool haveTent { get; set; }
+    public static bool BrokenCar { get; set; }
     public static bool haveGarage { get; set; }
-    public static bool haveSmallApartment { get; set; }
-    public static bool haveBigApartment { get; set; }
+    public static bool haveApartment { get; set; }
     public static bool haveHouse { get; set; }
     public static int lvlComfort { get; set; }
     //Имущество предметы
+    public static int Shoes { get; set;}
+    public static int ShoesWear { get; set; }
+    public static int Clothes { get; set; }
+    public static int ClothesWear { get; set; }
     public static bool haveSmartphone { get;set;}
+    public static bool Fridge { get; set; }
     public static bool haveComputer { get;set;}
     //Документы
     public static bool havePassport { get;set;}
@@ -78,7 +83,8 @@ public class Player : MonoBehaviour
     //Бизнес
     //Авто-нужды
     public static int haveGarden { get;set;}
-    public static int lvlSubForEat { get;set;}
+    public static int EatOnWeek { get;set;}
+    public static int EatOnMonth{ get; set; }
     public static int lvlSubForHealth { get;set;}
     public static int lvlSubForHapiness { get;set;}
     //Инвестиции
@@ -174,10 +180,10 @@ public class Player : MonoBehaviour
         {
             sailty = 100;
             health = 100;
-            hapiness = 100;
+            happiness = 100;
             maxSailty = 100;
             maxHealth = 100;
-            maxHapiness = 100;
+            maxHappiness = 100;
         }
         //Навыки
         {
@@ -212,15 +218,21 @@ public class Player : MonoBehaviour
         //Имущество жилье
         {
             haveTent = false;
+            BrokenCar = false;
             haveGarage = false;
-            haveSmallApartment = false;
-            haveBigApartment = false;
+            haveApartment = false;
+            haveApartment = false;
             haveHouse = false;
 
             lvlComfort = 0;
         }
         //Имущество предметы
         {
+            Shoes = 0;
+            ShoesWear = 0;
+            Clothes = 0;
+            ClothesWear = 0;
+            Fridge = false;
             haveSmartphone = false;
             haveComputer = false;
         }
@@ -249,7 +261,8 @@ public class Player : MonoBehaviour
         //Авто-нужды
         {
             haveGarden = 0;
-            lvlSubForEat = 0;
+            EatOnWeek = 0;
+            EatOnMonth = 0;
             lvlSubForHealth = 0;
             lvlSubForHapiness = 0;
 

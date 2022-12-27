@@ -23,11 +23,15 @@ public class ActionsButtons : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.ExecuteButton += AddAction;
+        GaEvNeeds.ExecuteButton += AddAction;
+        GETwoShops.ExecuteButton += AddAction;
 
     }
     private void OnDisable()
     {
         GameEvents.ExecuteButton -= AddAction;
+        GaEvNeeds.ExecuteButton -= AddAction;
+        GETwoShops.ExecuteButton -= AddAction;
     }
 
     public void AddAction()
@@ -53,21 +57,6 @@ public class ActionsButtons : MonoBehaviour
     {
         AddActions(3);
         UpdateAfterAction();
-    }
-    public void SailtyEdit()
-    {
-        Player.sailty -= 10;
-        AddAction();
-    }
-    public void HealthEdit()
-    {
-        Player.health -= 10;
-        AddAction();
-    }
-    public void HappinessEdit()
-    {
-        Player.hapiness -= 10;
-        AddAction();
     }
     public void CutBread()
     {

@@ -51,10 +51,10 @@ public class LoadData : MonoBehaviour
         //Нужды
         Player.sailty = sv.saveSailty;
         Player.health = sv.saveHealth;
-        Player.hapiness = sv.saveHapiness;
+        Player.happiness = sv.saveHappiness;
         Player.maxSailty = sv.saveMaxSailty;
         Player.maxHealth = sv.saveMaxHealth;
-        Player.maxHapiness = sv.saveMaxHapiness;
+        Player.maxHappiness = sv.savemaxHappiness;
         //Навыки
         Player.power = sv.savePower;
         Player.powerNav = sv.savePowerNav;
@@ -83,12 +83,17 @@ public class LoadData : MonoBehaviour
         Player.tempMoney = sv.saveTempMoney;
         //Имущество жилье
         Player.haveTent = sv.saveHaveTent;
+        Player.BrokenCar = sv.saveBrokenCar;
         Player.haveGarage = sv.saveHaveGarage;
-        Player.haveSmallApartment = sv.saveHaveSmallApartment;
-        Player.haveBigApartment = sv.saveHaveBigApartment;
+        Player.haveApartment = sv.saveHaveApartment;
         Player.haveHouse = sv.saveHaveHouse;
         Player.lvlComfort = sv.saveLvlComfort;
         //Имущество предметы
+        Player.Shoes = sv.saveShoes;
+        Player.ShoesWear = sv.saveShoesWear;
+        Player.Clothes = sv.saveClothes;
+        Player.ClothesWear = sv.saveClothesWear;
+        Player.Fridge = sv.saveFridge;
         Player.haveSmartphone = sv.saveHaveSmartphone;
         Player.haveComputer = sv.saveHaveComputer;
         //Документы
@@ -107,7 +112,8 @@ public class LoadData : MonoBehaviour
         //Бизнес
         //Авто-нужды
         Player.haveGarden = sv.saveHaveGarden;
-        Player.lvlSubForEat = sv.saveLvlSubForEat;
+        Player.EatOnWeek = sv.saveEatOnWeek;
+        Player.EatOnMonth = sv.saveEatOnMonth;
         Player.lvlSubForHealth = sv.saveLvlSubForHealth;
         Player.lvlSubForHapiness = sv.saveLvlSubForHapiness;
         //Инвестиции
@@ -155,10 +161,10 @@ public class LoadData : MonoBehaviour
         //Нужды
         public int saveSailty;
         public int saveHealth;
-        public int saveHapiness;
+        public int saveHappiness;
         public int saveMaxSailty;
         public int saveMaxHealth;
-        public int saveMaxHapiness;
+        public int savemaxHappiness;
         //Навыки
         public int savePower;
         public int savePowerNav;
@@ -180,18 +186,24 @@ public class LoadData : MonoBehaviour
         public int saveCurMonth;//Текущий месяц
         public string saveCurNameMonth;//Название текущего месяца
         public string saveCurNameSeason;//Название текущего сезона
-                                        //Имущество предметы
+
+        //Имущество предметы
         public int saveMoney;
         public int saveTotalMoney;
         public int saveTempMoney;
         //Имущество жилье
         public bool saveHaveTent;
+        public bool saveBrokenCar;
         public bool saveHaveGarage;
-        public bool saveHaveSmallApartment;
-        public bool saveHaveBigApartment;
+        public bool saveHaveApartment;
         public bool saveHaveHouse;
         public int saveLvlComfort;
         //Имущество предметы
+        public int saveShoes;
+        public int saveShoesWear;
+        public int saveClothes;
+        public int saveClothesWear;
+        public bool saveFridge;
         public bool saveHaveSmartphone;
         public bool saveHaveComputer;
         //Документы
@@ -210,7 +222,8 @@ public class LoadData : MonoBehaviour
         //Бизнес
         //Авто-нужды
         public int saveHaveGarden;
-        public int saveLvlSubForEat;
+        public int saveEatOnWeek;
+        public int saveEatOnMonth;
         public int saveLvlSubForHealth;
         public int saveLvlSubForHapiness;
         //Инвестиции

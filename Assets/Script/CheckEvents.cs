@@ -55,7 +55,7 @@ public class CheckEvents : MonoBehaviour
                     }
             }
         }
-        else if(Player.hapiness < 1)
+        else if(Player.happiness < 1)
         {
             Death("Вам показалась жизнь ужасной");
         }

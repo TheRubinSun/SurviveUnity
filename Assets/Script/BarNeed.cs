@@ -46,9 +46,9 @@ public class BarNeed : MonoBehaviour
         barHealth.fillAmount = health;
         textHealth.text = $"{Player.health}/{Player.maxHealth}";
 
-        float happiness = ((float)Player.hapiness/(float)Player.maxHapiness);
+        float happiness = ((float)Player.happiness/(float)Player.maxHappiness);
         barHappiness.fillAmount = happiness;
-        textHappiness.text = $"{Player.hapiness}/{Player.maxHapiness}";
+        textHappiness.text = $"{Player.happiness}/{Player.maxHappiness}";
 
         float exp = (((float)Player.ex)/(float)Player.nextExpLvl);
         barExp.fillAmount = exp;
