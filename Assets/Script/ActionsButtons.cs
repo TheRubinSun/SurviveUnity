@@ -25,6 +25,7 @@ public class ActionsButtons : MonoBehaviour
         GameEvents.ExecuteButton += AddAction;
         GaEvNeeds.ExecuteButton += AddAction;
         GETwoShops.ExecuteButton += AddAction;
+        UpdateInfoAction.UpdateInfo += JustUpdateInfo;
 
     }
     private void OnDisable()
@@ -32,8 +33,12 @@ public class ActionsButtons : MonoBehaviour
         GameEvents.ExecuteButton -= AddAction;
         GaEvNeeds.ExecuteButton -= AddAction;
         GETwoShops.ExecuteButton -= AddAction;
+        UpdateInfoAction.UpdateInfo -= JustUpdateInfo;
     }
-
+    public void JustUpdateInfo()
+    {
+        OneAction?.Invoke();
+    }
     public void AddAction()
     {
         Player.CurActionDay++;

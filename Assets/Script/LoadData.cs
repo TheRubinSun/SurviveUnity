@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,13 +10,16 @@ using UnityEngine.UI;
 public class LoadData : MonoBehaviour
 {
     private Save sv = new Save();
+    private SaveAction svAct = new SaveAction();
     private string path;
+    private string pathActions;
     public Text textVersion;
 
     void Start()
     {
         textVersion.text = "Version: "+Application.version;
         path = Application.persistentDataPath + "/Save.json";
+        pathActions = Application.persistentDataPath + "/SaveActions.json";
         Invoke("StartGame",1);
     }
     void StartGame()
@@ -23,7 +27,9 @@ public class LoadData : MonoBehaviour
         if (File.Exists(path))//При загрузке проверяет есть ли файл
         {
             sv = JsonUtility.FromJson<Save>(File.ReadAllText(path));//Загружает все данные 
+            svAct = JsonUtility.FromJson<SaveAction>(File.ReadAllText(pathActions));//Загружает все данные 
             Load();
+            LoadAction();
             SceneManager.LoadScene("Street");
         }
         else//Если файла нету
@@ -112,8 +118,7 @@ public class LoadData : MonoBehaviour
         //Бизнес
         //Авто-нужды
         Player.haveGarden = sv.saveHaveGarden;
-        Player.EatOnWeek = sv.saveEatOnWeek;
-        Player.EatOnMonth = sv.saveEatOnMonth;
+        Player.EatSubOnDay = sv.saveEatSubOnDay;
         Player.lvlSubForHealth = sv.saveLvlSubForHealth;
         Player.lvlSubForHapiness = sv.saveLvlSubForHapiness;
         //Инвестиции
@@ -133,9 +138,19 @@ public class LoadData : MonoBehaviour
         Player.RememberDaysOne = sv.saveRememberDaysOne; //Для акт угля
         Player.RememberDaysTwo = sv.saveRememberDaysTwo; //Для таблеток
                                                          //Акции
-        Player.CountPromotio = sv.saveCountPromotio;//Массив акций игрока
+        Player.actions = sv.saveActions;//Массив акций игрока
+        Player.countAction = sv.saveCountAction;
 
 
+    }
+    public void LoadAction()
+    {
+        Player.actions = new Action[svAct.saveName.Length];
+
+        for (int i = 0; i < svAct.saveName.Length; i++)
+        {
+            Player.actions[i] = new Action(svAct.saveName[i], svAct.saveCost[i]);
+        }
     }
 
 
@@ -222,8 +237,7 @@ public class LoadData : MonoBehaviour
         //Бизнес
         //Авто-нужды
         public int saveHaveGarden;
-        public int saveEatOnWeek;
-        public int saveEatOnMonth;
+        public int saveEatSubOnDay;
         public int saveLvlSubForHealth;
         public int saveLvlSubForHapiness;
         //Инвестиции
@@ -243,6 +257,14 @@ public class LoadData : MonoBehaviour
         public int saveRememberDaysOne; //Для акт угля
         public int saveRememberDaysTwo; //Для таблеток
                                         //Акции
-        public int[] saveCountPromotio = new int[5];//Массив акций игрока
+        public Action[] saveActions;//Массив акций игрока
+        public int[] saveCountAction;
+    }
+    [Serializable]
+    class SaveAction
+    {
+        public string[] saveName;
+        public int[] saveCost;
     }
 }
+

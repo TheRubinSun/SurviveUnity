@@ -8,8 +8,9 @@ public class SaveAfterClose : MonoBehaviour
 {
 
     private Save sv = new Save();
+    private SaveAction svAct = new SaveAction();
     private string path;
-    private string pathStartGame;
+    private string pathActions;
 
     private void OnEnable()
     {
@@ -22,7 +23,7 @@ public class SaveAfterClose : MonoBehaviour
     void Start()
     {
         path = Application.persistentDataPath + "/Save.json";
-        pathStartGame = Application.persistentDataPath + "/StartSavePerson.json";
+        pathActions = Application.persistentDataPath + "/SaveActions.json";
         InvokeRepeating("SaveButton", 1, 10);
     }
     private void OnApplicationPause(bool pause)//для андроид
@@ -30,11 +31,14 @@ public class SaveAfterClose : MonoBehaviour
         if (Player.sailty > 0 && Player.health > 0 && Player.happiness > 0 && (pause))
         {
             SaveFile();
+            SaveActionFile();
             File.WriteAllText(path, JsonUtility.ToJson(sv));
+            File.WriteAllText(pathActions, JsonUtility.ToJson(svAct));
         }
         else
         {
             File.Delete(path);
+            File.Delete(pathActions);
         }
     }
 
@@ -43,11 +47,14 @@ public class SaveAfterClose : MonoBehaviour
         if (Player.sailty > 0 && Player.health > 0 && Player.happiness > 0)
         {
             SaveFile();
+            SaveActionFile();
             File.WriteAllText(path, JsonUtility.ToJson(sv));
+            File.WriteAllText(pathActions, JsonUtility.ToJson(svAct));
         }
         else
         {
             File.Delete(path);
+            File.Delete(pathActions);
         }
     }
     public void SaveButton()
@@ -55,11 +62,14 @@ public class SaveAfterClose : MonoBehaviour
         if (Player.sailty > 0 && Player.health > 0 && Player.happiness > 0)
         {
             SaveFile();
+            SaveActionFile();
             File.WriteAllText(path, JsonUtility.ToJson(sv));
+            File.WriteAllText(pathActions, JsonUtility.ToJson(svAct));
         }
         else
         {
             File.Delete(path);
+            File.Delete(pathActions);
         }
     }
     public void SaveFile()
@@ -143,8 +153,7 @@ public class SaveAfterClose : MonoBehaviour
         //Бизнес
         //Авто-нужды
         sv.saveHaveGarden = Player.haveGarden;
-        sv.saveEatOnWeek = Player.EatOnWeek;
-        sv.saveEatOnMonth = Player.EatOnMonth;
+        sv.saveEatSubOnDay = Player.EatSubOnDay;
         sv.saveLvlSubForHealth = Player.lvlSubForHealth;
         sv.saveLvlSubForHapiness = Player.lvlSubForHapiness;
         //Инвестиции
@@ -164,7 +173,17 @@ public class SaveAfterClose : MonoBehaviour
         sv.saveRememberDaysOne = Player.RememberDaysOne; //Для акт угля
         sv.saveRememberDaysTwo = Player.RememberDaysTwo; //Для таблеток
         //Акции
-        sv.saveCountPromotio = Player.CountPromotio;//Массив акций игрока
+        sv.saveActions = Player.actions;//Массив акций игрока
+        sv.act1 = Player.actions[0];
+        sv.saveCountAction = Player.countAction;
+    }
+    public void SaveActionFile()
+    {
+        for(int i = 0;i<Player.actions.Length;i++)
+        {
+            svAct.saveName[i] = Player.actions[i].Name;
+            svAct.saveCost[i] = Player.actions[i].Cost;
+        }
     }
 }
 
@@ -250,8 +269,7 @@ public class Save
     //Бизнес
     //Авто-нужды
     public int saveHaveGarden;
-    public int saveEatOnWeek;
-    public int saveEatOnMonth;
+    public int saveEatSubOnDay;
     public int saveLvlSubForHealth;
     public int saveLvlSubForHapiness;
     //Инвестиции
@@ -271,5 +289,14 @@ public class Save
     public int saveRememberDaysOne; //Для акт угля
     public int saveRememberDaysTwo; //Для таблеток
     //Акции
-    public int[] saveCountPromotio = new int[5];//Массив акций игрока
+    public Action[] saveActions;//Массив акций игрока
+    public Action act1;
+    public int[] saveCountAction;
 }
+[Serializable]
+class SaveAction
+{
+    public string[] saveName = new string[5];
+    public int[] saveCost = new int[5];
+}
+

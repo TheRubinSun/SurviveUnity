@@ -46,7 +46,6 @@ public class PlayerPanel : MonoBehaviour
         textInfoStr += $"Уров бороды: {Player.lvlBread}\n";
         textInfo.text = textInfoStr;
 
-        
     }
 
     public void UpdateInfoResurces()

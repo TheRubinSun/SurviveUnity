@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Web;
 using UnityEngine;
 
 public class MainLogic : MonoBehaviour
@@ -246,6 +247,8 @@ public class MainLogic : MonoBehaviour
             Player.TotalDaysInGame++;
             Player.CurDay++;
 
+
+            //≈жедневные изменени€
             Player.priceBottle = Random.Range(2, 9);
             Player.priceBerries = Random.Range(100, 400);
             Player.priceCopper = Random.Range(250, 401);
@@ -256,6 +259,17 @@ public class MainLogic : MonoBehaviour
                 Player.sailty += Player.haveGarden * 3;//3 * на кол-во огородов за 1 день
             }
             if (Player.lvlBread < 6) Player.lvlBread++;
+
+            if (Player.EatSubOnDay > 0 && Player.sailty < Player.maxSailty)
+            {
+                Player.sailty += 50;
+                Player.EatSubOnDay--;
+            }
+
+            for(int i = 0;i<Player.actions.Length;i++)
+            {
+                Player.actions[i].Cost = Invest.NewPrice(Player.actions[i].Cost);
+            }
         }
         
     }
@@ -329,7 +343,22 @@ public class MainLogic : MonoBehaviour
 
     //=====================================================================================================================================
     //—оздание персонажа 
-
+    
+    static string CreateRandomNameAction()
+    {
+        string nameAction = "";
+        string[] arrayFirstName = new string[] { "¬не зоны", "–ик","The зад","Galaxy","Mable","Bouble","Pocket","Smart","Brother"};
+        string[] arraySecondName = new string[] { "Tea", "и ћорти","Ёкспресс","Imperia","и €иц","Edition","and sister"};
+        nameAction += arrayFirstName[Random.Range(0, arrayFirstName.Length)];
+        nameAction += " ";
+        nameAction += arraySecondName[Random.Range(0, arraySecondName.Length)];
+        return nameAction;
+    }
+    static int SetCostAction(int action)
+    {
+        if (action != 0) return (int)(Player.actions[action - 1].Cost * Random.Range(1.3f, 1.7f));
+        else return Random.Range(55, 75);
+    }
     
     public static List<Player> players = new List<Player>();
     public static void CreatePlayer(string name,int eyes,int hair,int colorhair,int face,int mounth,int noise, int beard)
@@ -342,5 +371,9 @@ public class MainLogic : MonoBehaviour
         int yearsOld = Player.CurYears-yearB;
         players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, money));
         //Player player = new Player(name,dayB, monthB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard,curDay, money);
+        for(int i = 0; i < Player.actions.Length;i++)
+        {
+            Player.actions[i] = new Action(CreateRandomNameAction(), SetCostAction(i));
+        }
     }
 }

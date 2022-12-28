@@ -92,16 +92,24 @@ public class GETwoShops : MonoBehaviour
     {
         if (Player.Fridge != true)
         {
-            if (Player.money >= costFridge)
+            if (Player.haveGarage == true || Player.haveApartment == true || Player.haveHouse)
             {
-                Player.Fridge = true;
-                Player.money -= costFridge;
-                OutputInfoBuy(costFridge,"холодильник");
+                if (Player.money >= costFridge)
+                {
+                    Player.Fridge = true;
+                    Player.money -= costFridge;
+                    OutputInfoBuy(costFridge, "холодильник");
+                }
+                else
+                {
+                    OutputInfoWarning($"Вам нехватает денег\nДанный товар стоит: {costFridge} Моулей");
+                }
             }
             else
             {
-                OutputInfoWarning($"Вам нехватает денег\nДанный товар стоит: {costFridge} Моулей");
+                OutputInfoWarning($"Вам нужен гараж или квартира или дом для холодильника");
             }
+
         }
         else
         {

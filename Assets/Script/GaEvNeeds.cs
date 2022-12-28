@@ -140,11 +140,45 @@ public class GaEvNeeds : MonoBehaviour
     }
     public void FoodOnWeek()
     {
-        JustMessage();
+        cost = 8000;
+        if(Player.Fridge == true)
+        {
+            if(Player.money >= cost)
+            {
+                Player.money -= cost;
+                Player.EatSubOnDay += 7;
+                NoMessage($"Вы приобрели подписку на 7 дней\nТеперь у вас действует подписка в сумме на {Player.EatSubOnDay}\n-{cost} Моулей\n Вы ежедневно получаете +50 к сытости");
+            }
+            else
+            {
+                NoMessage($"Вам нехватает денег!\nНеобходимо: {cost}");
+            }
+        }
+        else
+        {
+            NoMessage("Вам негде хранить еду, купите холодильник");
+        }
     }
     public void FoodOnMonth()
     {
-        JustMessage();
+        cost = 40000;
+        if (Player.Fridge == true)
+        {
+            if (Player.money >= cost)
+            {
+                Player.money -= cost;
+                Player.EatSubOnDay += 31;
+                NoMessage($"Вы приобрели подписку на 31 дней\nТеперь у вас действует подписка в сумме на {Player.EatSubOnDay}\n-{cost} Моулей\n Вы ежедневно получаете +50 к сытости");
+            }
+            else
+            {
+                NoMessage($"Вам нехватает денег!\nНеобходимо: {cost}");
+            }
+        }
+        else
+        {
+            NoMessage("Вам негде хранить еду, купите холодильник");
+        }
     }
     //===============================================================================================================
     public void HealRubbish()

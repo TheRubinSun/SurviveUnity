@@ -83,8 +83,7 @@ public class Player : MonoBehaviour
     //Бизнес
     //Авто-нужды
     public static int haveGarden { get;set;}
-    public static int EatOnWeek { get;set;}
-    public static int EatOnMonth{ get; set; }
+    public static int EatSubOnDay { get;set;}
     public static int lvlSubForHealth { get;set;}
     public static int lvlSubForHapiness { get;set;}
     //Инвестиции
@@ -104,7 +103,9 @@ public class Player : MonoBehaviour
     public static int RememberDaysOne { get;set;} //Для акт угля
     public static int RememberDaysTwo { get;set;} //Для таблеток
     //Акции
-    public static int [] CountPromotio { get; set; }//Массив акций игрока
+
+    public static Action [] actions { get; set; }//Массив акций игрока
+    public static int[] countAction { get; set; }//Акции у игрока
 
 
     public static int GetHead()
@@ -261,8 +262,7 @@ public class Player : MonoBehaviour
         //Авто-нужды
         {
             haveGarden = 0;
-            EatOnWeek = 0;
-            EatOnMonth = 0;
+            EatSubOnDay = 0;
             lvlSubForHealth = 0;
             lvlSubForHapiness = 0;
 
@@ -290,9 +290,8 @@ public class Player : MonoBehaviour
         }
         //Акции
         {
-            CountPromotio = new int[5];//Массив акций игрока
+            actions = new Action[5];//Массив акций игрока
+            countAction = new int[5];
         }
-
-        
     }
 }
