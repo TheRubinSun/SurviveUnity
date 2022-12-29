@@ -89,7 +89,8 @@ public class CheckEvents : MonoBehaviour
     public void DisplayPrice()
     {
         Instantiate(priceWindow, parent);
-        string temptext = $"1 бутылка = {Player.priceBottle} Моулей\n1 кг ягод = {Player.priceBerries} Моулей\n1 кг меди = {Player.priceCopper} Моулей\n1 электроника = {Player.priceElectronics} Моулей\n";
+
+        string temptext = $"<<Сегодня>>\n1 бутылка = {Player.priceBottle} Моулей\n1 кг ягод = {Player.priceBerries} Моулей\n1 кг меди = {Player.priceCopper} Моулей\n1 электроника = {Player.priceElectronics} Моулей\n";
         GameObject.Find("PriceText").GetComponent<Text>().text = temptext;
     }
     public void CloseDisplayPrice()
