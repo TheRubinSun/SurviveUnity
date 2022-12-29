@@ -44,6 +44,7 @@ public class PlayerPanel : MonoBehaviour
         textInfoStr += $"Заработанно всего: {Player.totalMoney}\n";
         textInfoStr += $"Тек дейв: {Player.CurActionDay}\n";
         textInfoStr += $"Уров бороды: {Player.lvlBread}\n";
+        textInfoStr += $"Репутация: {Player.reputation}\n";
         textInfo.text = textInfoStr;
 
     }
@@ -51,15 +52,15 @@ public class PlayerPanel : MonoBehaviour
     public void UpdateInfoResurces()
     {
         infoResurces = "";
-        infoResurces += $"Моулей: {Player.money}\t";
+        infoResurces += $"Моулей: {Player.money}\t ";
         if (Player.countBottle > 0)
         {
-            infoResurces += $"Бутылок: {Player.countBottle}\t";
+            infoResurces += $"Бутылок: {Player.countBottle}\t ";
             countVariantRec++;
         }
         if (Player.countCopper > 0)
         {
-            infoResurces += $"Меди: {((float)Player.countCopper)/10} кг.\t";
+            infoResurces += $"Меди: {((float)Player.countCopper)/10} кг.\t ";
             countVariantRec++;
         }
         if (Player.countElectronics > 0)

@@ -1228,8 +1228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u043F\u0438\u0442\u044C \u0434\u0435\u0448\u0435\u0432\u0443\u044E
-    \u043B\u0430\u043F\u0448\u0443"
+  m_Text: "\u0421\u0445\u043E\u0434\u0438\u0442\u044C \u0432 \u043A\u0438\u043D\u043E"
 --- !u!224 &1260399967790187837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1352,7 +1351,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5007375858128064998}
         m_TargetAssemblyTypeName: GaEvNeeds, Assembly-CSharp
-        m_MethodName: BrewNoodles
+        m_MethodName: GoToCinema
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1396,12 +1395,12 @@ GameObject:
   - component: {fileID: 1260399968067826803}
   - component: {fileID: 1260399968067826812}
   m_Layer: 0
-  m_Name: Null
+  m_Name: GoToCinema
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1260399968155313968
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -248,7 +248,7 @@ public class GETwoShops : MonoBehaviour
     {
         ExecuteButton.Invoke();
         string text = "";
-        text += $"Вы купили {product}";
+        text += $"Вы купили {product}\n";
         text += $"Вы потратили {cost} Моулей";
         info.text = text;
     }

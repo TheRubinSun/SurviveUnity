@@ -252,7 +252,7 @@ public class MainLogic : MonoBehaviour
             Player.priceBottle = Random.Range(2, 9);
             Player.priceBerries = Random.Range(100, 400);
             Player.priceCopper = Random.Range(250, 401);
-            Player.priceElectronics = Random.Range(800, 2000);
+            Player.priceElectronics = Random.Range(500, 1000);
 
             if (Player.haveGarden > 0 && Player.sailty < Player.maxSailty)//Если есть огород
             {
@@ -269,6 +269,14 @@ public class MainLogic : MonoBehaviour
             for(int i = 0;i<Player.actions.Length;i++)
             {
                 Player.actions[i].Cost = Invest.NewPrice(Player.actions[i].Cost);
+            }
+            if(Player.reloadingDaysCoal>0)
+            {
+                Player.reloadingDaysCoal--;
+            }
+            if (Player.reloadingDaysVitamins > 0)
+            {
+                Player.reloadingDaysVitamins--;
             }
         }
         
@@ -321,7 +329,7 @@ public class MainLogic : MonoBehaviour
         {
             Player.lvl++;
             Player.ex -= (int)Player.nextExpLvl;
-            Player.nextExpLvl = (int)(Player.nextExpLvl + (Player.nextExpLvl * 1.3f));
+            Player.nextExpLvl = (int)(Player.nextExpLvl + (Player.nextExpLvl * 1.2f));
         }
         if(Player.lvl > Player.oldlvl)
         {

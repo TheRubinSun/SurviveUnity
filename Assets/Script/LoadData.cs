@@ -104,10 +104,11 @@ public class LoadData : MonoBehaviour
         Player.haveComputer = sv.saveHaveComputer;
         //Документы
         Player.havePassport = sv.saveHavePassport;
-        Player.haveShcoolAt = sv.saveHaveShcoolAt;
+        Player.haveSchool = sv.savehaveSchool;
         Player.haveDiplCollage = sv.saveHaveDiplCollage;
         Player.haveDiplVus = sv.saveHveDiplVus;
         Player.haveMagistr = sv.saveHaveMagistr;
+        Player.haveAspir = sv.saveHaveAspir;
         //Опыт
         Player.ex = sv.saveEx;
         Player.lvl = sv.saveLvl;
@@ -134,6 +135,8 @@ public class LoadData : MonoBehaviour
         //Разное
         Player.moneyPercentForBD = sv.saveMoneyForBD;
         Player.DeathBool = sv.saveDeathBool;
+        Player.reloadingDaysCoal = sv.saveReloadingDaysCoal;
+        Player.reloadingDaysVitamins = sv.saveReloadingDaysVitamins;
         //Временные переменные
         Player.RememberDaysOne = sv.saveRememberDaysOne; //Для акт угля
         Player.RememberDaysTwo = sv.saveRememberDaysTwo; //Для таблеток
@@ -223,10 +226,11 @@ public class LoadData : MonoBehaviour
         public bool saveHaveComputer;
         //Документы
         public bool saveHavePassport;
-        public bool saveHaveShcoolAt;
+        public bool savehaveSchool;
         public bool saveHaveDiplCollage;
         public bool saveHveDiplVus;
         public bool saveHaveMagistr;
+        public bool saveHaveAspir;
         //Опыт
         public int saveEx;
         public int saveLvl;
@@ -253,6 +257,8 @@ public class LoadData : MonoBehaviour
         //Разное
         public int saveMoneyForBD;
         public bool saveDeathBool;
+        public int saveReloadingDaysCoal;
+        public int saveReloadingDaysVitamins;
         //Временные переменные
         public int saveRememberDaysOne; //Для акт угля
         public int saveRememberDaysTwo; //Для таблеток

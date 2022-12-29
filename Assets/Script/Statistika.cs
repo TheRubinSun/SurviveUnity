@@ -32,6 +32,13 @@ public class Statistika : MonoBehaviour
         if (Player.haveSmartphone == true) stata += "Имеет смартфон" + "\n";
         if (Player.Fridge == true) stata += "Имеет холодильник" + "\n";
 
+        if (Player.haveSchool == true) stata += "Есть школьный аттестат" + "\n";
+        else if (Player.haveDiplCollage == true) stata += "Имеет диплом колледжа" + "\n";
+        else if (Player.haveDiplVus == true) stata += "Имеет диплом бакалавра" + "\n";
+        else if (Player.haveMagistr == true) stata += "Имеет диплом магистра" + "\n";
+        else if (Player.haveAspir == true) stata += "Имеет диплом Аспиранта" + "\n";
+        else stata += "Без образования" + "\n";
+
         statistics.text = stata;
     }
 

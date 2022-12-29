@@ -69,10 +69,11 @@ public class Player : MonoBehaviour
     public static bool haveComputer { get;set;}
     //Документы
     public static bool havePassport { get;set;}
-    public static bool haveShcoolAt { get;set;}
+    public static bool haveSchool { get;set;}
     public static bool haveDiplCollage { get;set;}
     public static bool haveDiplVus { get;set;}
     public static bool haveMagistr { get;set;}
+    public static bool haveAspir { get; set; }
     //Опыт
     public static int ex { get;set;}
     public static int lvl { get;set;}
@@ -99,6 +100,8 @@ public class Player : MonoBehaviour
     //Разное
     public static int moneyPercentForBD { get;set;}
     public static bool DeathBool { get;set;}
+    public static int reloadingDaysCoal { get;set;}
+    public static int reloadingDaysVitamins { get;set;}
     //Временные переменные
     public static int RememberDaysOne { get;set;} //Для акт угля
     public static int RememberDaysTwo { get;set;} //Для таблеток
@@ -240,10 +243,11 @@ public class Player : MonoBehaviour
         //Документы
         {
             havePassport = false;
-            haveShcoolAt = false;
+            haveSchool = false;
             haveDiplCollage = false;
             haveDiplVus = false;
             haveMagistr = false;
+            haveAspir = false;
 
         }
         //Опыт
@@ -282,6 +286,8 @@ public class Player : MonoBehaviour
         {
             moneyPercentForBD = 5;//Деньги за День рождения
             DeathBool = true;//Для респауна
+            reloadingDaysCoal = 0;
+            reloadingDaysVitamins = 0;
         }
         //Временные переменные
         {
