@@ -116,4 +116,5 @@ MonoBehaviour:
   deathWindow: {fileID: 2007625400047736143, guid: e540440514483ee488fc082f7a155d7a, type: 3}
   bithDayWindow: {fileID: 7120615015348878602, guid: 5392d24d16da85349b78ebcffd5ba06a, type: 3}
   priceWindow: {fileID: 3834733608116328063, guid: 836a4563a2f80124487512da87182d9b, type: 3}
+  lvlUpWindow: {fileID: 2546048668609034138, guid: 7343093214d9b9d408352d7edfcc3336, type: 3}
   parent: {fileID: 6633987163086110777}

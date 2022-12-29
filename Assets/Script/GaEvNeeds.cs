@@ -374,10 +374,10 @@ public class GaEvNeeds : MonoBehaviour
         string text = "";
         text += message+"\n";
         if (cost > 0) text += $"Вы потратили: {cost} Моулей\n";
-        text += $"Выша сытость: {(sailty>0?'+':'-')}{sailty}";
-        if (health > 0) text += $"\tВаше здоровье: {(health > 0 ? '+' : '-')}{health}\n";
-        if (happines > 0) text += $"Ваше счастье: {(happines > 0 ? '+' : '-')}{happines}\n";
-        if (reputation > 0) text += $"Ваша репутация: {(reputation > 0 ? '+' : '-')}{reputation}\n";
+        text += $"Выша сытость: {(sailty>0?'+':' ')}{sailty}\n";
+        if (health > 0) text += $"\tВаше здоровье: {(health > 0 ? '+' : ' ')}{health}\n";
+        if (happines > 0) text += $"Ваше счастье: {(happines > 0 ? '+' : ' ')}{happines}\n";
+        if (reputation > 0) text += $"Ваша репутация: {(reputation > 0 ? '+' : ' ')}{reputation}\n";
         if (bottle > 0) text += $"Вы нашли: {bottle} бутылок\n";
         info.text = text;
     }

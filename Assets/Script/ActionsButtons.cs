@@ -27,6 +27,7 @@ public class ActionsButtons : MonoBehaviour
         GETwoShops.ExecuteButton += AddAction;
         UpdateInfoAction.UpdateInfo += JustUpdateInfo;
         GaDocuments.ExecuteButton += AddAction;
+        CheckEvents.UpdateInfoAfterLvl += JustUpdateInfo;
 
     }
     private void OnDisable()
@@ -36,6 +37,7 @@ public class ActionsButtons : MonoBehaviour
         GETwoShops.ExecuteButton -= AddAction;
         UpdateInfoAction.UpdateInfo -= JustUpdateInfo;
         GaDocuments.ExecuteButton -= AddAction;
+        CheckEvents.UpdateInfoAfterLvl -= JustUpdateInfo;
     }
     public void JustUpdateInfo()
     {

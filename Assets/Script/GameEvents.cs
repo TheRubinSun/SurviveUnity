@@ -16,7 +16,7 @@ public class GameEvents : MonoBehaviour
     public void SearchUrn()
     {
         int bottle = Random.Range(3, 8);
-        int copper = Random.Range(0, 2);
+        int copper = Random.Range(0, 4);
         int chance = Random.Range(0, 15);
 
         int electronics = 0;

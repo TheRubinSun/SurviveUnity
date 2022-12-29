@@ -42,9 +42,7 @@ public class PlayerPanel : MonoBehaviour
         textInfoStr += $"Дней: {Player.CurDay}/365\n";
         textInfoStr += $"Действий: {Player.CounterActionsDay}\n";
         textInfoStr += $"Заработанно всего: {Player.totalMoney}\n";
-        textInfoStr += $"Тек дейв: {Player.CurActionDay}\n";
-        textInfoStr += $"Уров бороды: {Player.lvlBread}\n";
-        textInfoStr += $"Репутация: {Player.reputation}\n";
+
         textInfo.text = textInfoStr;
 
     }

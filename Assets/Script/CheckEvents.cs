@@ -6,21 +6,28 @@ using UnityEngine.UI;
 
 public class CheckEvents : MonoBehaviour
 {
+    public delegate void Delagate();
+    public static event Delagate EventDeath;
+
+
     public GameObject deathWindow;
     public GameObject bithDayWindow;
     public GameObject priceWindow;
+    public GameObject lvlUpWindow;
     public Transform parent;
     private void OnEnable()
     {
         ActionsButtons.OneAction += CheckAction;
         ActionsButtons.OneAction += CheckDay;
         GameEvents.OpenEvent += DisplayPrice;
+        MainLogic.EventLvlUp += LvlUp;
     }
     private void OnDisable()
     {
         ActionsButtons.OneAction -= CheckAction;
         ActionsButtons.OneAction -= CheckDay;
         GameEvents.OpenEvent -= DisplayPrice;
+        MainLogic.EventLvlUp -= LvlUp;
     }
     void CheckAction()
     {
@@ -86,6 +93,7 @@ public class CheckEvents : MonoBehaviour
         Player.money += (int)(Player.totalMoney / 100 * Player.moneyPercentForBD);
         Destroy(GameObject.Find("BG BirthDay(Clone)"));
     }
+
     public void DisplayPrice()
     {
         Instantiate(priceWindow, parent);
@@ -99,12 +107,55 @@ public class CheckEvents : MonoBehaviour
     }
 
 
-    public delegate void DelDeath();
-    public static event DelDeath EventDeath;
     public void OkeyDeath()
     {
         Destroy(GameObject.Find("Death BG(Clone)"));
         EventDeath.Invoke();
         SceneManager.LoadScene("StartGame");
+    }
+
+    public void SailtyUp()
+    {
+        Player.maxSailty += 25;
+        Player.sailty = Player.maxSailty;
+        CloseLvlUpWindow();
+
+    }
+
+    public delegate void DelLvlUp();
+    public static event DelLvlUp UpdateInfoAfterLvl;
+    public void LvlUp()
+    {
+        Instantiate(lvlUpWindow, parent);
+        Invoke("CloseTimerWindow", 1f);
+    }
+    public void CloseTimerWindow()
+    {
+        Destroy(GameObject.Find("Timer"));
+    }
+    public void HealthUp()
+    {
+        Player.maxHealth += 25;
+        Player.health = Player.maxHealth;
+        CloseLvlUpWindow();
+    }
+    public void HappinessUp()
+    {
+        Player.maxHappiness += 25;
+        Player.happiness = Player.maxHappiness;
+        CloseLvlUpWindow();
+    }
+    public void BonysBDUp()
+    {
+        Player.moneyPercentForBD += 2;
+        CloseLvlUpWindow();
+    }
+    void CloseLvlUpWindow()
+    {
+        Player.freeSkillPoint--;
+        Player.totalSkillPoint++;
+        MainLogic.pumpedUp = false;
+        UpdateInfoAfterLvl.Invoke();
+        Destroy(GameObject.Find("LvlUpBG(Clone)"));
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Web;
 using UnityEngine;
+using static CheckEvents;
 
 public class MainLogic : MonoBehaviour
 {
@@ -26,8 +27,9 @@ public class MainLogic : MonoBehaviour
         TimdeDay();
         CountedMoney();
         CounterActDay();
-        LvlUP();
         ExpCouned();
+        LvlUP();
+        
         
     }
     static int DayInMonth;
@@ -319,10 +321,10 @@ public class MainLogic : MonoBehaviour
     void ExpCouned()
     {
         Player.ex = Player.CounterActionsDay + (Player.totalMoney/100);
+        //LvlUP();
     }
-    static int b = 0;//Защита при загрузке опыта
-    static bool prov = false;
-    //static bool prov2 = false;
+    public static event Delagate EventLvlUp;
+    public static bool pumpedUp = false;
     void LvlUP()
     {
         if(Player.ex >= Player.nextExpLvl)
@@ -336,17 +338,19 @@ public class MainLogic : MonoBehaviour
             Player.freeSkillPoint++;
             Player.oldlvl++;
         }
-        if (Player.freeSkillPoint - Player.totalSkillPoint > b)//Если есть скиллПоинты то прокачка талантов
+        if (Player.freeSkillPoint > 0)//Если есть скиллПоинты то прокачка талантов
         {
-            b++;
+            if(pumpedUp == false)
+            {
+                EventLvlUp.Invoke();
+                
+                pumpedUp = true;
+            }
+            
             //LvlUP();
             //WindowsWait();
         }
-        if(prov == true)//Запуск окна прокачки таланта
-        {
-            //Message(info);
-            prov = false;
-        }
+
     }
 
     //=====================================================================================================================================
@@ -377,7 +381,10 @@ public class MainLogic : MonoBehaviour
         //int monthB = ;
         int yearB = 1980;
         int yearsOld = Player.CurYears-yearB;
-        players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, money));
+        if (name == "g919g")
+            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, 9999999));
+        else
+            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, money));
         //Player player = new Player(name,dayB, monthB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard,curDay, money);
         for(int i = 0; i < Player.actions.Length;i++)
         {

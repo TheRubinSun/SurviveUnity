@@ -39,6 +39,12 @@ public class Statistika : MonoBehaviour
         else if (Player.haveAspir == true) stata += "Имеет диплом Аспиранта" + "\n";
         else stata += "Без образования" + "\n";
 
+
+        stata += $"Тек дейв: {Player.CurActionDay}\n";
+        stata += $"Уров бороды: {Player.lvlBread}\n";
+        stata += $"Репутация: {Player.reputation}\n";
+        stata += $"Доступно улучшений: {Player.freeSkillPoint}\n";
+        stata += $"Всего прокаченно талантов: {Player.freeSkillPoint}\n";
         statistics.text = stata;
     }
 

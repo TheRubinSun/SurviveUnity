@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 6802021071467708565}
   - component: {fileID: 3122117356858246995}
   m_Layer: 0
-  m_Name: EatSlops
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -812,7 +812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.81157845}
-  m_AnchoredPosition: {x: 0, y: 110.13684}
+  m_AnchoredPosition: {x: 0, y: 110.13672}
   m_SizeDelta: {x: 0, y: -220.27371}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931168201287948341
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 1105986341012495261}
   - component: {fileID: 1105986341012495262}
   m_Layer: 0
-  m_Name: Try to steal food
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1318,8 +1318,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u044B\u0442\u0430\u0442\u044C\u0441\u044F \u0432\u043E\u0440\u043E\u0432\u0430\u0442\u044C
-    \u0435\u0434\u0443"
+  m_Text: ??????
 --- !u!224 &1105986341014957423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1494,7 +1493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112186624057366383, guid: 008ea0e1d59d79b428bf412c35408032, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2112186624057366383, guid: 008ea0e1d59d79b428bf412c35408032, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1655,7 +1654,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u0448\u0430\u0442\u044C \u0441 \u043F\u043E\u043C\u043E\u0439\u043A\u0438"
+  m_Text: ??????
 --- !u!224 &5698720261294792581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1783,7 +1782,7 @@ GameObject:
   - component: {fileID: 6407564866320671369}
   - component: {fileID: 6407564866320671368}
   m_Layer: 0
-  m_Name: buy food on month
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1917,7 +1916,7 @@ GameObject:
   - component: {fileID: 6407564866399850373}
   - component: {fileID: 6407564866399850372}
   m_Layer: 0
-  m_Name: NullButton
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1977,7 +1976,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u043E\u0435\u0441\u0442\u044C \u0432 \u0440\u0435\u0441\u0442\u043E\u0440\u0430\u043D\u0435"
+  m_Text: ??????
 --- !u!222 &6407564866680856609
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2095,7 +2094,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u043F\u0438\u0442\u044C \u0448\u0430\u0443\u0440\u043C\u0443"
+  m_Text: ??????
 --- !u!222 &6407564866714325591
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2232,7 +2231,7 @@ GameObject:
   - component: {fileID: 6407564867266102674}
   - component: {fileID: 6407564867266102673}
   m_Layer: 0
-  m_Name: Eat restaurant
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2309,7 +2308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0434\u0443 \u043D\u0430 \u043C\u0435\u0441\u044F\u0446"
+  m_Text: ??????
 --- !u!222 &6407564867392897035
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2331,7 +2330,7 @@ GameObject:
   - component: {fileID: 6407564867419322270}
   - component: {fileID: 6407564867419322269}
   m_Layer: 0
-  m_Name: Buy food on week
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2485,7 +2484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u043F\u0438\u0442\u044C \u0435\u0434\u0443 \u043D\u0430 \u043D\u0435\u0434\u0435\u043B\u044E"
+  m_Text: ??????
 --- !u!222 &6407564867502907405
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2583,7 +2582,7 @@ GameObject:
   - component: {fileID: 6407564867672735124}
   - component: {fileID: 6407564867672735131}
   m_Layer: 0
-  m_Name: Brew noodles
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2687,7 +2686,7 @@ GameObject:
   - component: {fileID: 6407564867853676247}
   - component: {fileID: 6407564867853676246}
   m_Layer: 0
-  m_Name: BuyFastfood
+  m_Name: null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2711,7 +2710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.784973}
+  m_AnchoredPosition: {x: 0, y: -19.784912}
   m_SizeDelta: {x: -30, y: -619.77637}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6407564867853676246
@@ -2879,8 +2878,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u043F\u0438\u0442\u044C \u0434\u0435\u0448\u0435\u0432\u0443\u044E
-    \u043B\u0430\u043F\u0448\u0443"
+  m_Text: ??????
 --- !u!1 &6407564867986934848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,8 +2950,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0426\u0435\u043D\u044B \u043D\u0430 \u0440\u0435\u0441\u0443\u0440\u0441\u044B
-    \u0441\u0435\u0433\u043E\u0434\u043D\u044F"
+  m_Text: ??????
 --- !u!222 &6407564867986934851
 CanvasRenderer:
   m_ObjectHideFlags: 0

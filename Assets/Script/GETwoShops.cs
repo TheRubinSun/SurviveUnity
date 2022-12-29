@@ -125,7 +125,7 @@ public class GETwoShops : MonoBehaviour
             {
                 Player.haveTent = true;
                 Player.money -= costTent;
-                OutputInfoBuy(costTent, "палатка");
+                OutputInfoBuy(costTent, "палатку");
             }
             else
             {
@@ -145,7 +145,7 @@ public class GETwoShops : MonoBehaviour
             {
                 Player.BrokenCar = true;
                 Player.money -= costBrokenCar;
-                OutputInfoBuy(costBrokenCar, "сломанная машина");
+                OutputInfoBuy(costBrokenCar, "сломанную машину");
             }
             else
             {
@@ -165,7 +165,7 @@ public class GETwoShops : MonoBehaviour
             {
                 Player.haveGarage = true;
                 Player.money -= costGarage;
-                OutputInfoBuy(costGarage, "сломанная машина");
+                OutputInfoBuy(costGarage, "гараж");
             }
             else
             {
@@ -185,7 +185,7 @@ public class GETwoShops : MonoBehaviour
             {
                 Player.haveApartment = true;
                 Player.money -= costApartment;
-                OutputInfoBuy(costApartment, "квартира");
+                OutputInfoBuy(costApartment, "квартиру");
             }
             else
             {
