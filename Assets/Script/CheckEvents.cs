@@ -78,7 +78,7 @@ public class CheckEvents : MonoBehaviour
     void BirthDay()
     {
         Instantiate(bithDayWindow, parent);
-        string temptext = $"У вас день рождения!\nВаш подарок:\n{(int)(Player.totalMoney/100 * Player.moneyPercentForBD)} денег";
+        string temptext = $"У вас день рождения!\nВаш подарок:\n{(int)(Player.totalMoney/100 * Player.moneyPercentForBD)} Моулей";
         GameObject.Find("TextBirthDay").GetComponent<Text>().text = temptext;
     }
     public void GiveMoneyForBD()
@@ -89,7 +89,7 @@ public class CheckEvents : MonoBehaviour
     public void DisplayPrice()
     {
         Instantiate(priceWindow, parent);
-        string temptext = $"1 бутылка = {Player.priceBottle} руб.\n1 кг ягод = {Player.priceBerries} руб.\n1 кг меди = {Player.priceCopper} руб.\n1 электроника = {Player.priceElectronics} руб.\n";
+        string temptext = $"1 бутылка = {Player.priceBottle} Моулей\n1 кг ягод = {Player.priceBerries} Моулей\n1 кг меди = {Player.priceCopper} Моулей\n1 электроника = {Player.priceElectronics} Моулей\n";
         GameObject.Find("PriceText").GetComponent<Text>().text = temptext;
     }
     public void CloseDisplayPrice()
