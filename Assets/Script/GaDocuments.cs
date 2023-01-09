@@ -9,98 +9,93 @@ public class GaDocuments : MonoBehaviour
     public static event DisButtonWork ExecuteButton;
     public Text info;
 
-    int costPassport;
-    int costAttSchool;
-    int costCollege;
-    int costBakal;
-    int costMagis;
-    int costAspir;
+
     // Start is called before the first frame update
     void Start()
     {
-        costPassport = 7000;
-        costAttSchool = 30000;
-        costCollege = 210000;
-        costBakal = 800000;
-        costMagis = 1600000;
-        costAspir = 4000000;
+        //Player.PricePassport = 7000;
+        //Player.PriceSchoolEd = 30000;
+        //Player.PriceColledge = 210000;
+        //Player.PriceBakal = 800000;
+        //Player.PriceMagis = 1600000;
+        //Player.PriceAsper = 4000000;
     }
     public void BuyPassport()
     {
-        if (Player.money >= costPassport)
+        if (Player.money >= Player.PricePassport)
         {
             Player.havePassport = true;
-            Player.money -= costPassport;
-            OutputInfoBuy(costPassport, "Вы восстановили паспорт");
+            Player.money -= Player.PricePassport;
+            OutputInfoBuy(Player.PricePassport, "Вы восстановили паспорт");
         }
         else
         {
-            OutputInfoWarning($"Вам нехватает денег\nВосстановление паспорта стоит: {costPassport} Моулей");
+            OutputInfoWarning($"Вам нехватает денег\nВосстановление паспорта стоит: {Player.PricePassport} Моулей");
         }
     }
     public void BuyAttSchool()
     {
-        if (Player.money >= costAttSchool)
+        if (Player.money >= Player.PriceSchoolEd)
         {
             Player.haveSchool = true;
-            Player.money -= costAttSchool;
-            OutputInfoBuy(costAttSchool, "Вы получили школьное образование");
+            Player.money -= Player.PriceSchoolEd;
+            OutputInfoBuy(Player.PriceSchoolEd, "Вы получили школьное образование");
         }
         else
         {
-            OutputInfoWarning($"Вам нехватает денег\nДля получения школьного образования: {costAttSchool} Моулей");
+            OutputInfoWarning($"Вам нехватает денег\nДля получения школьного образования: {Player.PriceSchoolEd} Моулей");
         }
     }
     public void BuyDipCollege()
     {
-        if (Player.money >= costCollege)
+        if (Player.money >= Player.PriceColledge)
         {
             Player.haveDiplCollage = true;
-            Player.money -= costCollege;
-            OutputInfoBuy(costCollege, "Вы отучились в колледже");
+            Player.money -= Player.PriceColledge;
+            OutputInfoBuy(Player.PriceColledge, "Вы отучились в колледже");
         }
         else
         {
-            OutputInfoWarning($"Вам нехватает денег\nВыучится в колледже: {costCollege} Моулей");
+            OutputInfoWarning($"Вам нехватает денег\nВыучится в колледже: {Player.PriceColledge} Моулей");
         }
     }
     public void BuyDipBakal()
     {
-        if (Player.money >= costBakal)
+        if (Player.money >= Player.PriceBakal)
         {
             Player.haveDiplVus = true;
-            Player.money -= costBakal;
-            OutputInfoBuy(costBakal, "Вы отучились на бакалавра");
+            Player.money -= Player.PriceBakal;
+            OutputInfoBuy(Player.PriceBakal, "Вы отучились на бакалавра");
         }
         else
         {
-            OutputInfoWarning($"Вам нехватает денег\nВыучится на бакалавра: {costBakal} Моулей");
+            OutputInfoWarning($"Вам нехватает денег\nВыучится на бакалавра: {Player.PriceBakal} Моулей");
         }
     }
     public void BuyMagistrl()
     {
-        if (Player.money >= costMagis)
+        if (Player.money >= Player.PriceMagis)
         {
             Player.haveMagistr = true;
-            Player.money -= costMagis;
-            OutputInfoBuy(costMagis, "Вы отучились на магистра");
+            Player.money -= Player.PriceMagis;
+            OutputInfoBuy(Player.PriceMagis, "Вы отучились на магистра");
         }
         else
         {
-            OutputInfoWarning($"Вам нехватает денег\nВыучится на магистра: {costMagis} Моулей");
+            OutputInfoWarning($"Вам нехватает денег\nВыучится на магистра: {Player.PriceMagis} Моулей");
         }
     }
     public void BuyAspir()
     {
-        if (Player.money >= costAspir)
+        if (Player.money >= Player.PriceAsper)
         {
             Player.haveAspir = true;
-            Player.money -= costAspir;
-            OutputInfoBuy(costAspir, "Вы отучились в аспирантуре");
+            Player.money -= Player.PriceAsper;
+            OutputInfoBuy(Player.PriceAsper, "Вы отучились в аспирантуре");
         }
         else
         {
-            OutputInfoWarning($"Вам нехватает денег\nВыучится в аспирантуре: {costAspir} Моулей");
+            OutputInfoWarning($"Вам нехватает денег\nВыучится в аспирантуре: {Player.PriceAsper} Моулей");
         }
     }
     void OutputInfoWarning(string text)
@@ -111,5 +106,11 @@ public class GaDocuments : MonoBehaviour
     {
         ExecuteButton.Invoke();
         info.text = $"{text}\nЗа {cost} Моулей";
+    }
+    public delegate void DelOpenDoc();
+    public static event DelOpenDoc OpenEventDoc;
+    public void OpenDisplayPriceDocuments()
+    {
+        OpenEventDoc.Invoke();
     }
 }

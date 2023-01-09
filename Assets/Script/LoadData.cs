@@ -144,7 +144,23 @@ public class LoadData : MonoBehaviour
         Player.actions = sv.saveActions;//Массив акций игрока
         Player.countAction = sv.saveCountAction;
 
-
+        //Цены
+        Player.PriceShoes = sv.savePriceShoes;
+        Player.PriceClothes = sv.savePriceClothes;
+        Player.PriceSmartPhone = sv.savePriceSmartPhone;
+        Player.PriceFridge = sv.savePriceFridge;
+        Player.PriceCutBread = sv.savePriceCutBread;
+        Player.PriceTent = sv.savePriceTent;
+        Player.PriceBrokenCar = sv.savePriceBrokenCar;
+        Player.PriceGarage = sv.savePriceGarage;
+        Player.PriceApartament = sv.savePriceApartament;
+        Player.PriceHouse = sv.savePriceHouse;
+        Player.PricePassport = sv.savePricePassport;
+        Player.PriceSchoolEd = sv.savePriceSchoolEd;
+        Player.PriceColledge = sv.savePriceColledge;
+        Player.PriceBakal = sv.savePriceBakal;
+        Player.PriceMagis = sv.savePriceMagis;
+        Player.PriceAsper = sv.savePriceAsper;
     }
     public void LoadAction()
     {
@@ -265,6 +281,24 @@ public class LoadData : MonoBehaviour
                                         //Акции
         public Action[] saveActions;//Массив акций игрока
         public int[] saveCountAction;
+
+        //Цены
+        public int savePriceShoes;
+        public int savePriceClothes;
+        public int savePriceSmartPhone;
+        public int savePriceFridge;
+        public int savePriceCutBread;
+        public int savePriceTent;
+        public int savePriceBrokenCar;
+        public int savePriceGarage;
+        public int savePriceApartament;
+        public int savePriceHouse;
+        public int savePricePassport;
+        public int savePriceSchoolEd;
+        public int savePriceColledge;
+        public int savePriceBakal;
+        public int savePriceMagis;
+        public int savePriceAsper;
     }
     [Serializable]
     class SaveAction

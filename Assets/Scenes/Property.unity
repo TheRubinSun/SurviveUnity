@@ -1515,7 +1515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0085449}
+  m_AnchoredPosition: {x: 0, y: 0.008544922}
   m_SizeDelta: {x: 0, y: 0.016846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4013194689503429311
@@ -1749,7 +1749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -489.96652}
+  m_AnchoredPosition: {x: 0, y: -489.96655}
   m_SizeDelta: {x: -30, y: -1000.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7183709286855808261
@@ -1765,12 +1765,12 @@ GameObject:
   - component: {fileID: 7183709286855808266}
   - component: {fileID: 7183709286855808267}
   m_Layer: 0
-  m_Name: NullBut
+  m_Name: CheckPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &7183709286855808265
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1853,9 +1853,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4013194689503429284}
-        m_TargetAssemblyTypeName: GameEvents, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 4013194689503429312}
+        m_TargetAssemblyTypeName: GETwoShops, Assembly-CSharp
+        m_MethodName: OpenDisplayPriceProperty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2505,7 +2505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -239.9665}
+  m_AnchoredPosition: {x: 0, y: -239.96649}
   m_SizeDelta: {x: -30, y: -1060.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7183709288010111620
@@ -2692,7 +2692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.966484}
+  m_AnchoredPosition: {x: 0, y: -19.966492}
   m_SizeDelta: {x: -30, y: -1060.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7183709288153396315
@@ -2796,7 +2796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 90.0335}
+  m_AnchoredPosition: {x: 0, y: 90.03351}
   m_SizeDelta: {x: -30, y: -1060.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7183709288275748630
@@ -2977,8 +2977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0443\u043F\u0438\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u043E\u0439
-    \u0434\u043E\u043C"
+  m_Text: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0446\u0435\u043D\u044B"
 --- !u!224 &7183709288556926670
 RectTransform:
   m_ObjectHideFlags: 0

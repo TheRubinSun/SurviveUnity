@@ -809,7 +809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 90.0335}
+  m_AnchoredPosition: {x: 0, y: 90.03351}
   m_SizeDelta: {x: -30, y: -1060.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4006309194896240424
@@ -868,7 +868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.966484}
+  m_AnchoredPosition: {x: 0, y: -19.966492}
   m_SizeDelta: {x: -30, y: -1060.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4006309195018992745
@@ -1358,7 +1358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'NullButton '
+  m_Text: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0446\u0435\u043D\u044B"
 --- !u!114 &4006309195715519776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,7 +1433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -239.9665}
+  m_AnchoredPosition: {x: 0, y: -239.96649}
   m_SizeDelta: {x: -30, y: -1060.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4006309195715519778
@@ -1767,12 +1767,12 @@ GameObject:
   - component: {fileID: 4006309196782710836}
   - component: {fileID: 4006309196782710837}
   m_Layer: 0
-  m_Name: NullButton 4
+  m_Name: CheckPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &4006309196782710836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,9 +1847,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7176862293754661526}
-        m_TargetAssemblyTypeName: SearchResources, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 7176862293754661527}
+        m_TargetAssemblyTypeName: GETwoShops, Assembly-CSharp
+        m_MethodName: OpenDisplayPriceMarket
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1885,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -489.96652}
+  m_AnchoredPosition: {x: 0, y: -489.96655}
   m_SizeDelta: {x: -30, y: -1000.0668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4006309196869229879
@@ -2785,7 +2785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0085449}
+  m_AnchoredPosition: {x: 0, y: 0.008544922}
   m_SizeDelta: {x: 0, y: 0.016846}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7176862293754661515

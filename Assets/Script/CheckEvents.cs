@@ -19,15 +19,23 @@ public class CheckEvents : MonoBehaviour
     {
         ActionsButtons.OneAction += CheckAction;
         ActionsButtons.OneAction += CheckDay;
-        GameEvents.OpenEvent += DisplayPrice;
+        GameEvents.OpenEvent += DisplayPriceRec;
         MainLogic.EventLvlUp += LvlUp;
+        GaDocuments.OpenEventDoc += DisplayPriceDocuments;
+        GETwoShops.MarketEvent += DisplayPriceMarket;
+        GETwoShops.PropertyEvent+= DisplayPriceProperty;
+        GETwoShops.CareEvent+= DisplayPriceCare;
     }
     private void OnDisable()
     {
         ActionsButtons.OneAction -= CheckAction;
         ActionsButtons.OneAction -= CheckDay;
-        GameEvents.OpenEvent -= DisplayPrice;
+        GameEvents.OpenEvent -= DisplayPriceRec;
         MainLogic.EventLvlUp -= LvlUp;
+        GaDocuments.OpenEventDoc -= DisplayPriceDocuments;
+        GETwoShops.MarketEvent -= DisplayPriceMarket;
+        GETwoShops.PropertyEvent -= DisplayPriceProperty;
+        GETwoShops.CareEvent -= DisplayPriceCare;
     }
     void CheckAction()
     {
@@ -94,13 +102,43 @@ public class CheckEvents : MonoBehaviour
         Destroy(GameObject.Find("BG BirthDay(Clone)"));
     }
 
-    public void DisplayPrice()
+    public void DisplayPriceRec()
     {
         Instantiate(priceWindow, parent);
 
-        string temptext = $"<<Сегодня>>\n1 бутылка = {Player.priceBottle} Моулей\n1 кг ягод = {Player.priceBerries} Моулей\n1 кг меди = {Player.priceCopper} Моулей\n1 электроника = {Player.priceElectronics} Моулей\n";
+        string temptext = $"<<Сегодня>>\n1 бутылка = {Player.priceBottle} Моулей\n1 кг ягод = {Player.priceBerries} Моулей\n1 кг меди = {Player.priceCopper} Моулей\n1 электроника = {Player.priceElectronics} Моулей";
         GameObject.Find("PriceText").GetComponent<Text>().text = temptext;
     }
+    public void DisplayPriceMarket()
+    {
+        Instantiate(priceWindow, parent);
+        string temptext = 
+            $"<<Сегодня>>\nОбувь = {Player.PriceShoes} Моулей\nОдежда = {Player.PriceClothes} Моулей\nСмартфон = {Player.PriceSmartPhone} Моулей\nХолодильник = {Player.PriceFridge} Моулей";
+        GameObject.Find("PriceText").GetComponent<Text>().text = temptext;
+    }
+    public void DisplayPriceProperty()
+    {
+        Instantiate(priceWindow, parent);
+        string temptext = 
+            $"<<Сегодня>>\nПалатка = {Player.PriceTent} Моулей\nСлом. машина = {Player.PriceBrokenCar} Моулей\nГараж = {Player.PriceGarage} Моулей\nКвартира = {Player.PriceApartament} Моулей\nДом = {Player.PriceHouse} Моулей";
+        GameObject.Find("PriceText").GetComponent<Text>().text = temptext;
+    }
+    public void DisplayPriceCare()
+    {
+        Instantiate(priceWindow, parent);
+        string temptext = 
+            $"<<Сегодня>>\nСбрить бороду {Player.PriceCutBread} Моулей";
+        GameObject.Find("PriceText").GetComponent<Text>().text = temptext;
+    }
+    public void DisplayPriceDocuments()
+    {
+        Instantiate(priceWindow, parent);
+        string temptext = 
+            $"Паспорт = {Player.PricePassport} Моулей\nПолучить школьн. образ. = {Player.PriceSchoolEd} Моулей\nУчится в колледже = {Player.PriceColledge} Моулей\n" +
+            $"Учится на бакалавра = {Player.PriceBakal} Моулей\nУчится на магистра = {Player.PriceMagis} Моулей\nУчится в аспирантуре = {Player.PriceAsper} Моулей";
+        GameObject.Find("PriceText").GetComponent<Text>().text = temptext;
+    }
+
     public void CloseDisplayPrice()
     {
         Destroy(GameObject.Find("PriceBG(Clone)"));

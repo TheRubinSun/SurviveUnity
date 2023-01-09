@@ -22,12 +22,12 @@ public class GameEvents : MonoBehaviour
         int electronics = 0;
         if (chance > 13) electronics = 1;
 
-        int sailty = Random.Range(7, 11);
-        int health = Random.Range(3, 6);
-        int happines = Random.Range(6, 13);
+        int sailty = Random.Range(-7, -11);
+        int health = Random.Range(-3, -6);
+        int happines = Random.Range(-6, -13);
         int rep = Random.Range(-20, -40);
 
-        PlayerSet(bottle, copper, electronics, -sailty, -health, -happines,rep);
+        PlayerSet(bottle, copper, electronics, sailty, health, happines,rep);
         OutputInfoResource(bottle, copper, electronics, sailty, health, happines, rep);
 
         ExecuteButton?.Invoke();
@@ -47,11 +47,11 @@ public class GameEvents : MonoBehaviour
         }
 
         int rep = Random.Range(-40, -80);
-        int sailty = Random.Range(25, 35);
-        int health = Random.Range(16, 25);
-        int happines = Random.Range(27, 35);
+        int sailty = Random.Range(-15, -35);
+        int health = Random.Range(-16, -25);
+        int happines = Random.Range(-20, -30);
 
-        PlayerSet(bottle, copper, electronics, -sailty, -health, -happines,rep);
+        PlayerSet(bottle, copper, electronics, sailty, health, happines,rep);
         OutputInfoResource(bottle, copper, electronics, sailty, health, happines, rep);
 
         ExecuteButton?.Invoke();
@@ -63,10 +63,10 @@ public class GameEvents : MonoBehaviour
         text += $"Итог:\n+{bottle} бутылок\n";
         if (copper > 0) text += $"+{((float)copper) / 10} кг. меди\n";
         if (electronics > 0) text += $"+{electronics} электроника\n";
-        text += $"-{sailty} к сытости\n";
-        text += $"-{health} к здоровью\n";
-        text += $"-{happines} к счатью\n";
-        text += $"-{rep} к репутации\n";
+        text += $"{sailty} к сытости\n";
+        text += $"{health} к здоровью\n";
+        text += $"{happines} к счатью\n";
+        text += $"{rep} к репутации\n";
         info.text = text;
     }
     //===========================================================================================================
@@ -98,10 +98,10 @@ public class GameEvents : MonoBehaviour
         {
             OutputInfoSaleRec($"Вы продали {Player.countCopper / 10} кг. меди\n по {Player.priceCopper} Моулей за 1 кг меди\nи получили:\n{Player.countCopper / 10 * Player.priceCopper} Моулей");
             Player.PlayerEarnedMoney((int)(Player.countCopper/10) * Player.priceCopper);
-            Player.countCopper = 0;
+            Player.countCopper = Player.countCopper%10;
             ExecuteButton?.Invoke();
         }
-        else OutputInfoSaleRec("У вас недостаточно меди!");
+        else OutputInfoSaleRec("У вас недостаточно меди!\nМожно продавать минимум 1 кг.");
     }
     public void SellElectronics()
     {
@@ -117,14 +117,14 @@ public class GameEvents : MonoBehaviour
     //===========================================================================================================
     public void SweepYards()
     {
-        if(Player.haveSchool == true)
+        if(Player.havePassport == true)
         {
             int sailty = Random.Range(15, 25);
             int health = Random.Range(10, 15);
             int happines = Random.Range(8, 15);
             int money = Random.Range(100, 150);
             int bottle = Random.Range(10, 20);
-            int rep = Random.Range(10, 20);
+            int rep = Random.Range(15, 25);
 
             PlayerWorkSet(money, -sailty, -health, -happines, bottle, rep);
             OutputInfoWork(money, sailty, health, happines, bottle, rep);
@@ -133,20 +133,20 @@ public class GameEvents : MonoBehaviour
         }
         else
         {
-            OutputInfoSaleRec("Чтобы работать дворником,\n нужно школьное образование");
+            OutputInfoSaleRec("Чтобы работать дворником,\n нужнен паспорт");
         }
 
     }
     public void WashCars()
     {
-        if ((Player.haveSchool == true) && (Player.reputation > 500))
+        if ((Player.havePassport == true) && (Player.reputation > 500))
         {
             int sailty = Random.Range(15, 22);
             int health = Random.Range(8, 15);
             int happines = Random.Range(8, 13);
             int money = Random.Range(150, 200);
             int bottle = 0;
-            int rep = Random.Range(20, 40);
+            int rep = Random.Range(30, 60);
 
             PlayerWorkSet(money, -sailty, -health, -happines, bottle, rep);
             OutputInfoWork(money, sailty, health, happines, bottle, rep);
@@ -156,22 +156,47 @@ public class GameEvents : MonoBehaviour
         else
         {
             if (Player.haveSchool != true)
-                OutputInfoSaleRec("Чтобы мыть машины,\n нужно школьное образование");
+                OutputInfoSaleRec("Чтобы мыть машины,\n нужнен паспорт");
             else
                 OutputInfoSaleRec("У вас слишком маленькая репутация,\n чтобы мыть машины");
 
         }
     }
+    public void WorkMarket()
+    {
+        if ((Player.haveSchool == true) && (Player.reputation > 2000))
+        {
+            int sailty = Random.Range(13, 21);
+            int health = Random.Range(8, 14);
+            int happines = Random.Range(8, 12);
+            int money = Random.Range(250, 400);
+            int bottle = 0;
+            int rep = Random.Range(70, 200);
+
+            PlayerWorkSet(money, -sailty, -health, -happines, bottle, rep);
+            OutputInfoWork(money, sailty, health, happines, bottle, rep);
+
+            ExecuteButton?.Invoke();
+        }
+        else
+        {
+            if (Player.haveSchool != true)
+                OutputInfoSaleRec("Чтобы работать продавцом,\n нужно школьное образование");
+            else
+                OutputInfoSaleRec("У вас слишком маленькая репутация,\n чтобы работать продавцом");
+
+        }
+    }
     public void WorkFactory()
     {
-        if (Player.haveDiplCollage == true && Player.reputation > 5000)
+        if (Player.haveDiplCollage == true && Player.reputation > 10000)
         {
-            int sailty = Random.Range(12, 22);
+            int sailty = Random.Range(12, 20);
             int health = Random.Range(8, 13);
             int happines = Random.Range(8, 11);
             int money = 600;
             int bottle = 0;
-            int rep = Random.Range(100, 200);
+            int rep = Random.Range(500, 800);
 
             PlayerWorkSet(money, -sailty, -health, -happines, bottle, rep);
             OutputInfoWork(money, sailty, health, happines, bottle, rep);
@@ -188,14 +213,14 @@ public class GameEvents : MonoBehaviour
     }
     public void WorkOffice()
     {
-        if (Player.haveDiplVus == true && Player.reputation > 35000)
+        if (Player.haveDiplVus == true && Player.reputation > 50000)
         {
-            int sailty = Random.Range(12, 20);
+            int sailty = Random.Range(11, 19);
             int health = Random.Range(8, 11);
             int happines = Random.Range(7, 11);
             int money = 600;
             int bottle = 0;
-            int rep = Random.Range(300, 600);
+            int rep = Random.Range(1000, 1700);
 
             PlayerWorkSet(money, -sailty, -health, -happines, bottle, rep);
             OutputInfoWork(money, sailty, health, happines, bottle, rep);
@@ -212,14 +237,14 @@ public class GameEvents : MonoBehaviour
     }
     public void WorkItCompany()
     {
-        if (Player.haveMagistr == true && Player.reputation > 100000)
+        if (Player.haveMagistr == true && Player.reputation > 150000)
         {
-            int sailty = Random.Range(10, 15);
+            int sailty = Random.Range(11, 15);
             int health = Random.Range(7, 10);
             int happines = Random.Range(6, 10);
             int money = 1500;
             int bottle = 0;
-            int rep = Random.Range(600, 1500);
+            int rep = Random.Range(2000, 3500);
 
             PlayerWorkSet(money, -sailty, -health, -happines, bottle, rep);
             OutputInfoWork(money, sailty, health, happines, bottle, rep);
@@ -263,17 +288,17 @@ public class GameEvents : MonoBehaviour
     void OutputInfoWork(int money, int sailty, int health, int happiness, int bottle, int rep)
     {
         text = "";
-        text += $"Вы заработали {money} Моулей";
-        text += $"-{sailty} к сытости";
-        text += $"-{health} к здоровью";
-        text += $"-{happiness} к счастью";
-        text += $"+{rep} к репутации";
+        text += $"Вы заработали {money} Моулей\n";
+        text += $"-{sailty} к сытости\n";
+        text += $"-{health} к здоровью\n";
+        text += $"-{happiness} к счастью\n";
+        text += $"+{rep} к репутации\n";
         info.text = text;
     }
     //===========================================================================================================
     public delegate void DelOpen();
     public static event DelOpen OpenEvent;
-    public void OpenDisplayPrice()
+    public void OpenDisplayPriceRec()
     {
         OpenEvent.Invoke();
     }

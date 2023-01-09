@@ -28,12 +28,12 @@ public class GaEvNeeds : MonoBehaviour
         {
             cost = 0;
             sailty = Random.Range(5, 20);
-            health = Random.Range(2, 8);
-            happines = Random.Range(6, 12);
+            health = Random.Range(-2, -8);
+            happines = Random.Range(-6, -12);
             bottle = Random.Range(3, 8);
-            reputatuion = Random.Range(10, 40);
+            reputatuion = Random.Range(-10, -40);
 
-            PlayerSet(0, -sailty, health, -happines, -reputatuion, bottle);
+            PlayerSet(0, sailty, health, happines, reputatuion, bottle);
             OutputInfoEat("Вы поели помои с мусорок", 0, sailty, health, happines, reputatuion, bottle);
         }
         else
@@ -51,9 +51,9 @@ public class GaEvNeeds : MonoBehaviour
             {
                 message = "Вам удалось украсть еду";
                 sailty = Random.Range(20, 40);
-                health = Random.Range(2, 4);
-                happines = Random.Range(3, 8);
-                reputatuion = Random.Range(10, 40);
+                health = Random.Range(-2, -4);
+                happines = Random.Range(-3, -8);
+                reputatuion = Random.Range(-10, -40);
             }
             else
             {
@@ -64,7 +64,7 @@ public class GaEvNeeds : MonoBehaviour
                 reputatuion = Random.Range(40, 200);
             }
             bottle = 0;
-            PlayerSet(0, sailty, -health, -happines,-reputatuion, bottle);
+            PlayerSet(0, sailty, health, happines,reputatuion, bottle);
             OutputInfoEat(message, 0, sailty, health, happines, reputatuion, bottle);
         }
         else
@@ -80,9 +80,9 @@ public class GaEvNeeds : MonoBehaviour
             if (Player.money >= cost)
             {
                 sailty = 15;
-                health = 4;
-                PlayerSet(cost, sailty, -health, 0, 0, 0);
-                OutputInfoEat("Вы поели заварную лапшу", cost, sailty, -health, 0, 0, 0);
+                health = -4;
+                PlayerSet(cost, sailty, health, 0, 0, 0);
+                OutputInfoEat("Вы поели заварную лапшу", cost, sailty, health, 0, 0, 0);
             }
             else
             {
@@ -102,10 +102,10 @@ public class GaEvNeeds : MonoBehaviour
             if (Player.money >= cost)
             {
                 sailty = 50;
-                health = 1;
+                health = -1;
                 happines = 15;
-                PlayerSet(cost, sailty, -health, happines, 0, 0);
-                OutputInfoEat("Вы поели фаст-фуд", cost, sailty, -health, happines, 0, 0);
+                PlayerSet(cost, sailty, health, happines, 0, 0);
+                OutputInfoEat("Вы поели фаст-фуд", cost, sailty, health, happines, 0, 0);
             }
             else
             {
@@ -209,14 +209,14 @@ public class GaEvNeeds : MonoBehaviour
                 cost = 15;
                 if (Player.money >= cost)
                 {
-                    sailty = Random.Range(4, 7);
+                    sailty = Random.Range(-4, -7);
                     health = 10;
-                    happines = Random.Range(2, 5);
+                    happines = Random.Range(-2, -5);
                     bottle = 0;
                     reputatuion = 0;
                     Player.reloadingDaysCoal += 3;
-                    PlayerSet(cost, -sailty, health, -happines, -reputatuion, bottle);
-                    OutputInfoEat("Вы съели акт. уголь", cost, -sailty, health, -happines, -reputatuion, bottle);
+                    PlayerSet(cost, sailty, health, happines, reputatuion, bottle);
+                    OutputInfoEat("Вы съели акт. уголь", cost, sailty, health, happines, reputatuion, bottle);
                 }
             }
             else
@@ -244,8 +244,8 @@ public class GaEvNeeds : MonoBehaviour
                     bottle = 0;
                     reputatuion = 0;
                     Player.reloadingDaysVitamins += 3;
-                    PlayerSet(cost, sailty, health, -happines, -reputatuion, bottle);
-                    OutputInfoEat("Вы съели акт. уголь", cost, sailty, health, -happines, -reputatuion, bottle);
+                    PlayerSet(cost, sailty, health, happines, reputatuion, bottle);
+                    OutputInfoEat("Вы съели акт. уголь", cost, sailty, health, happines, reputatuion, bottle);
                 }
             }
             else
@@ -266,13 +266,13 @@ public class GaEvNeeds : MonoBehaviour
             cost = 300;
             if (Player.money >= cost)
             {
-                sailty = 2;
+                sailty = -2;
                 health = 35;
-                happines = Random.Range(2, 5);
+                happines = Random.Range(-2, -5);
                 bottle = 0;
                 reputatuion = 0;
-                PlayerSet(cost, -sailty, health, -happines, -reputatuion, bottle);
-                OutputInfoEat("Вы лечились у целителя", cost, -sailty, health, -happines, -reputatuion, bottle);
+                PlayerSet(cost, sailty, health, happines, reputatuion, bottle);
+                OutputInfoEat("Вы лечились у целителя", cost, sailty, health, happines,-reputatuion, bottle);
             }
         }
         else
@@ -292,8 +292,8 @@ public class GaEvNeeds : MonoBehaviour
                 happines = 0;
                 bottle = 0;
                 reputatuion = 0;
-                PlayerSet(cost, -sailty, health, -happines, -reputatuion, bottle);
-                OutputInfoEat("Вы лечились в больнице", cost, -sailty, health, -happines, -reputatuion, bottle);
+                PlayerSet(cost, sailty, health, happines, reputatuion, bottle);
+                OutputInfoEat("Вы лечились в больнице", cost, sailty, health, happines, reputatuion, bottle);
             }
         }
         else
@@ -308,13 +308,13 @@ public class GaEvNeeds : MonoBehaviour
         {
             cost = 0;
             sailty = -4;
-            health = Random.Range(2, 4);
+            health = Random.Range(-2, -4);
             happines = Random.Range(5, 20);
             bottle = Random.Range(1, 5);
             reputatuion = Random.Range(10, 30);
 
-            PlayerSet(0, -sailty, -health, happines, reputatuion, bottle);
-            OutputInfoEat("Вы поиграли в карты", 0, -sailty, -health, happines, reputatuion, bottle);
+            PlayerSet(0, sailty, health, happines, reputatuion, bottle);
+            OutputInfoEat("Вы поиграли в карты", 0, sailty, health, happines, reputatuion, bottle);
         }
         else
         {
@@ -373,12 +373,12 @@ public class GaEvNeeds : MonoBehaviour
     {
         string text = "";
         text += message+"\n";
-        if (cost > 0) text += $"Вы потратили: {cost} Моулей\n";
+        if (cost != 0) text += $"Вы потратили: {cost} Моулей\n";
         text += $"Выша сытость: {(sailty>0?'+':' ')}{sailty}\n";
-        if (health > 0) text += $"\tВаше здоровье: {(health > 0 ? '+' : ' ')}{health}\n";
-        if (happines > 0) text += $"Ваше счастье: {(happines > 0 ? '+' : ' ')}{happines}\n";
-        if (reputation > 0) text += $"Ваша репутация: {(reputation > 0 ? '+' : ' ')}{reputation}\n";
-        if (bottle > 0) text += $"Вы нашли: {bottle} бутылок\n";
+        if (health != 0) text += $"\tВаше здоровье: {(health > 0 ? '+' : ' ')}{health}\n";
+        if (happines != 0) text += $"Ваше счастье: {(happines > 0 ? '+' : ' ')}{happines}\n";
+        if (reputation != 0) text += $"Ваша репутация: {(reputation > 0 ? '+' : ' ')}{reputation}\n";
+        if (bottle != 0) text += $"Вы нашли: {bottle} бутылок\n";
         info.text = text;
     }
     void NoMessage(string message)

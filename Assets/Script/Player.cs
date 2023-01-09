@@ -110,6 +110,23 @@ public class Player : MonoBehaviour
     public static Action [] actions { get; set; }//Массив акций игрока
     public static int[] countAction { get; set; }//Акции у игрока
 
+    //Цены
+    public static int PriceShoes { get; set; }
+    public static int PriceClothes { get; set; }
+    public static int PriceSmartPhone { get; set; }
+    public static int PriceFridge { get; set; }
+    public static int PriceCutBread { get; set; }
+    public static int PriceTent { get; set; }
+    public static int PriceBrokenCar { get; set; }
+    public static int PriceGarage { get; set; }
+    public static int PriceApartament { get; set; }
+    public static int PriceHouse { get; set; }
+    public static int PricePassport { get; set; }
+    public static int PriceSchoolEd { get; set; }
+    public static int PriceColledge { get; set; }
+    public static int PriceBakal { get; set; }
+    public static int PriceMagis { get; set; }
+    public static int PriceAsper { get; set; }
 
     public static int GetHead()
     {
@@ -159,7 +176,11 @@ public class Player : MonoBehaviour
         int nose_,
         int beard_,
         int curDay_,
-        int money_
+        int money_,
+        int maxSailty_,
+        int maxHealth_,
+        int maxHappines_,
+        int maxRep_
         )
     {
         //Личность
@@ -182,12 +203,12 @@ public class Player : MonoBehaviour
         }
         //Нужды
         {
-            sailty = 100;
-            health = 100;
-            happiness = 100;
-            maxSailty = 100;
-            maxHealth = 100;
-            maxHappiness = 100;
+            sailty = maxSailty_;
+            health = maxHealth_;
+            happiness = maxHappines_;
+            maxSailty = maxSailty_;
+            maxHealth = maxHealth_;
+            maxHappiness = maxHappines_;
         }
         //Навыки
         {
@@ -197,7 +218,7 @@ public class Player : MonoBehaviour
             intelNav = 0;
             handAggility = 0;
             handAggNav = 0;
-            reputation = 0;
+            reputation = maxRep_;
             lvlBread = 1;
             motivation = 0;
         }
@@ -299,5 +320,23 @@ public class Player : MonoBehaviour
             actions = new Action[5];//Массив акций игрока
             countAction = new int[5];
         }
+        //Цены
+        PriceShoes = 1000;
+        PriceClothes = 5000;
+        PriceSmartPhone = 30000;
+        PriceFridge = 70000;
+        PriceCutBread = 300;
+        PriceTent = 5000;
+        PriceBrokenCar = 35000;
+        PriceGarage = 300000;
+        PriceApartament = 1500000;
+        PriceHouse = 8000000;
+        PricePassport = 7000;
+        PriceSchoolEd = 30000;
+        PriceColledge = 210000;
+        PriceBakal = 800000;
+        PriceMagis = 1600000;
+        PriceAsper = 4000000;
+
     }
 }

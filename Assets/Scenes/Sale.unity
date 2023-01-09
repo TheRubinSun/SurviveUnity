@@ -587,7 +587,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6052858547268716819}
         m_TargetAssemblyTypeName: GameEvents, Assembly-CSharp
-        m_MethodName: OpenDisplayPrice
+        m_MethodName: OpenDisplayPriceRec
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

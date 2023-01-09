@@ -382,9 +382,13 @@ public class MainLogic : MonoBehaviour
         int yearB = 1980;
         int yearsOld = Player.CurYears-yearB;
         if (name == "g919g")
-            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, 9999999));
+            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, 9999999,100,100,100,10000000));
+        else if(name == "God1000")
+            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, money, 1000, 1000, 1000,0));
+        else if (name == "GTitanG")
+            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, 9999999, 1000, 1000, 1000, 10000000));
         else
-            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, money));
+            players.Add(new Player(name, dayB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard, curDay, money,100,100,100,0));
         //Player player = new Player(name,dayB, monthB, yearB, yearsOld, eyes, hair, colorhair, face, mounth, noise, beard,curDay, money);
         for(int i = 0; i < Player.actions.Length;i++)
         {
