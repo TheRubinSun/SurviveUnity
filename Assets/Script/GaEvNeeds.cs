@@ -147,7 +147,7 @@ public class GaEvNeeds : MonoBehaviour
             {
                 Player.money -= cost;
                 Player.EatSubOnDay += 7;
-                NoMessage($"Вы приобрели подписку на 7 дней\nТеперь у вас действует подписка в сумме на {Player.EatSubOnDay}\n-{cost} Моулей\n Вы ежедневно получаете +50 к сытости");
+                JustMessage($"Вы приобрели подписку на 7 дней\nТеперь у вас действует подписка в сумме на {Player.EatSubOnDay}\n-{cost} Моулей\n Вы ежедневно получаете +50 к сытости");
             }
             else
             {
@@ -168,7 +168,7 @@ public class GaEvNeeds : MonoBehaviour
             {
                 Player.money -= cost;
                 Player.EatSubOnDay += 31;
-                NoMessage($"Вы приобрели подписку на 31 дней\nТеперь у вас действует подписка в сумме на {Player.EatSubOnDay}\n-{cost} Моулей\n Вы ежедневно получаете +50 к сытости");
+                JustMessage($"Вы приобрели подписку на 31 дней\nТеперь у вас действует подписка в сумме на {Player.EatSubOnDay}\n-{cost} Моулей\n Вы ежедневно получаете +50 к сытости");
             }
             else
             {
@@ -385,9 +385,10 @@ public class GaEvNeeds : MonoBehaviour
     {
         info.text = message;
     }
-    void JustMessage()
+    void JustMessage(string message)
     {
-        info.text = "Данное действия пока не доступно";
+        info.text = message;
+        ExecuteButton.Invoke();
     }
     void PlayerSet(int money,int sailty,int health,int happines,int reputation,int bottle)
     {

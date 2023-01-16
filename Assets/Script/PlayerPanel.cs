@@ -50,7 +50,7 @@ public class PlayerPanel : MonoBehaviour
     public void UpdateInfoResurces()
     {
         infoResurces = "";
-        infoResurces += $"Моулей: {Player.money}\t ";
+        //infoResurces += $"Моулей: {Player.money}\t ";
         if (Player.countBottle > 0)
         {
             infoResurces += $"Бутылок: {Player.countBottle}\t ";

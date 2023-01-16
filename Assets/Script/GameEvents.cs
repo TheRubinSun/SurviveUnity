@@ -122,7 +122,7 @@ public class GameEvents : MonoBehaviour
             int sailty = Random.Range(15, 25);
             int health = Random.Range(10, 15);
             int happines = Random.Range(8, 15);
-            int money = Random.Range(100, 150);
+            int money = Random.Range(90, 130);
             int bottle = Random.Range(10, 20);
             int rep = Random.Range(15, 25);
 
@@ -144,7 +144,7 @@ public class GameEvents : MonoBehaviour
             int sailty = Random.Range(15, 22);
             int health = Random.Range(8, 15);
             int happines = Random.Range(8, 13);
-            int money = Random.Range(150, 200);
+            int money = Random.Range(140, 180);
             int bottle = 0;
             int rep = Random.Range(30, 60);
 
@@ -169,7 +169,7 @@ public class GameEvents : MonoBehaviour
             int sailty = Random.Range(13, 21);
             int health = Random.Range(8, 14);
             int happines = Random.Range(8, 12);
-            int money = Random.Range(250, 400);
+            int money = Random.Range(350, 550);
             int bottle = 0;
             int rep = Random.Range(70, 200);
 
@@ -194,7 +194,7 @@ public class GameEvents : MonoBehaviour
             int sailty = Random.Range(12, 20);
             int health = Random.Range(8, 13);
             int happines = Random.Range(8, 11);
-            int money = 600;
+            int money = 1100;
             int bottle = 0;
             int rep = Random.Range(500, 800);
 
@@ -218,7 +218,7 @@ public class GameEvents : MonoBehaviour
             int sailty = Random.Range(11, 19);
             int health = Random.Range(8, 11);
             int happines = Random.Range(7, 11);
-            int money = 600;
+            int money = 3800;
             int bottle = 0;
             int rep = Random.Range(1000, 1700);
 
@@ -242,7 +242,7 @@ public class GameEvents : MonoBehaviour
             int sailty = Random.Range(11, 15);
             int health = Random.Range(7, 10);
             int happines = Random.Range(6, 10);
-            int money = 1500;
+            int money = 9500;
             int bottle = 0;
             int rep = Random.Range(2000, 3500);
 

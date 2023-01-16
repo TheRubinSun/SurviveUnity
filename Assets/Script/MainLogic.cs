@@ -359,8 +359,8 @@ public class MainLogic : MonoBehaviour
     static string CreateRandomNameAction()
     {
         string nameAction = "";
-        string[] arrayFirstName = new string[] { "Вне зоны", "Рик","The зад","Galaxy","Mable","Bouble","Pocket","Smart","Brother"};
-        string[] arraySecondName = new string[] { "Tea", "и Морти","Экспресс","Imperia","и яиц","Edition","and sister"};
+        string[] arrayFirstName = new string[] { "Вне зоны", "Рик","The зад","Galaxy","Mable","Bouble","Pocket","Smart","Brother", "Огромный","Алис", "AGUS", "Энергос", "Вне области", "RedBigFace", "Резиновый", "Ягурец", "Ты не яйцо", "Bollocks", "Coke", "Kakashka", "Korji", "The зад", "Cold", "Ovolod" };
+        string[] arraySecondName = new string[] { "Tea", "и Морти","Экспресс","Imperia","и яиц","Edition","and sister", "Dungeon", "Мобильный", "Диск", "Пуджастер", "Portable", "Press", "Cola", "Shop", "Огненный", "Паяльник","Жесть", "Cola", "BlackOne", "Store", "Stoke", "Old bear","Bear","Beer of bread" };
         nameAction += arrayFirstName[Random.Range(0, arrayFirstName.Length)];
         nameAction += " ";
         nameAction += arraySecondName[Random.Range(0, arraySecondName.Length)];
