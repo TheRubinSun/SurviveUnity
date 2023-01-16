@@ -331,12 +331,12 @@ public class Player : MonoBehaviour
         PriceGarage = 300000;
         PriceApartament = 1500000;
         PriceHouse = 8000000;
-        PricePassport = 7000;
-        PriceSchoolEd = 30000;
-        PriceColledge = 210000;
-        PriceBakal = 800000;
+        PricePassport = 6000;
+        PriceSchoolEd = 20000;
+        PriceColledge = 80000;
+        PriceBakal = 400000;
         PriceMagis = 1600000;
-        PriceAsper = 4000000;
+        PriceAsper = 5000000;
 
     }
 }
